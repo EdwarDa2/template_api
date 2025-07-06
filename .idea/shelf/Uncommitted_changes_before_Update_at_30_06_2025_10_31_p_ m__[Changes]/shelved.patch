@@ -1,0 +1,77 @@
+Index: src/main/java/org/alilopez/di/AppModule.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.alilopez.di;\r\n\r\nimport org.alilopez.controller.UserController;\r\nimport org.alilopez.repository.UserRepository;\r\nimport org.alilopez.routes.UserRoutes;\r\nimport org.alilopez.service.UserService;\r\n\r\npublic class AppModule {\r\n    public static UserRoutes initUser() {\r\n        UserRepository userRepo = new UserRepository();\r\n        UserService userService = new UserService(userRepo);\r\n        UserController userController = new UserController(userService);\r\n        return new UserRoutes(userController);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/alilopez/di/AppModule.java b/src/main/java/org/alilopez/di/AppModule.java
+--- a/src/main/java/org/alilopez/di/AppModule.java	(revision abf61d57d29326cf52a4147413028b57f2734b54)
++++ b/src/main/java/org/alilopez/di/AppModule.java	(date 1751047440577)
+@@ -1,8 +1,12 @@
+ package org.alilopez.di;
+ 
++import org.alilopez.controller.ProductController;
+ import org.alilopez.controller.UserController;
++import org.alilopez.repository.ProductRepository;
+ import org.alilopez.repository.UserRepository;
++import org.alilopez.routes.ProductsRouters;
+ import org.alilopez.routes.UserRoutes;
++import org.alilopez.service.ProductService;
+ import org.alilopez.service.UserService;
+ 
+ public class AppModule {
+@@ -12,4 +16,11 @@
+         UserController userController = new UserController(userService);
+         return new UserRoutes(userController);
+     }
++    public static ProductsRouters initProducts() {
++        ProductRepository productRepo = new ProductRepository();
++        ProductService productService = new ProductService(productRepo);
++        ProductController productController = new ProductController(productService);
++        ProductsRouters productsRouters = new ProductsRouters(productController);
++        return productsRouters;
++    }
+ }
+Index: src/main/java/org/alilopez/controller/ProductController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/alilopez/controller/ProductController.java b/src/main/java/org/alilopez/controller/ProductController.java
+new file mode 100644
+--- /dev/null	(date 1751047448643)
++++ b/src/main/java/org/alilopez/controller/ProductController.java	(date 1751047448643)
+@@ -0,0 +1,32 @@
++package org.alilopez.controller;
++
++import io.javalin.http.Context;
++import io.javalin.http.HttpStatus;
++import org.alilopez.model.Product;
++import org.alilopez.model.User;
++import org.alilopez.service.ProductService;
++import org.alilopez.service.UserService;
++
++import java.sql.SQLException;
++import java.util.List;
++
++public class ProductController {
++
++    private final ProductService productService;
++
++    public ProductController(ProductService productService) {
++        this.productService = productService;
++    }
++
++    public void create(Context ctx) {
++        try {
++            User user = ctx.bodyAsClass(User.class);
++            Product product = ctx.bodyAsClass(Product.class);
++            productService.create(product);
++            ctx.status(201).result("Producto creado");
++        } catch (Exception e) {
++            ctx.status(400).result("Erro al crear el producto");
++        }
++    }
++
++}

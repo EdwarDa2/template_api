@@ -1,0 +1,233 @@
+Index: src/main/java/org/alilopez/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.alilopez;\r\n\r\nimport io.javalin.Javalin;\r\nimport io.javalin.plugin.bundled.CorsPluginConfig;\r\nimport org.alilopez.di.AppModule;\r\nimport org.alilopez.routes.UserRoutes;\r\n\r\n//TIP To <b>Run</b> code, press <shortcut actionId=\"Run\"/> or\r\n// click the <icon src=\"AllIcons.Actions.Execute\"/> icon in the gutter.\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n\r\n        Javalin app = Javalin.create(config -> {\r\n            config.bundledPlugins.enableCors(cors -> {\r\n                cors.addRule(CorsPluginConfig.CorsRule::anyHost);\r\n            });\r\n        }).start(7000);\r\n\r\n        // Rutas generales\r\n        app.get(\"/\", ctx -> ctx.result(\"API Javalin 2\"));\r\n\r\n        AppModule.initUser().register(app);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/alilopez/Main.java b/src/main/java/org/alilopez/Main.java
+--- a/src/main/java/org/alilopez/Main.java	(revision abf61d57d29326cf52a4147413028b57f2734b54)
++++ b/src/main/java/org/alilopez/Main.java	(date 1751047440623)
+@@ -20,5 +20,6 @@
+         app.get("/", ctx -> ctx.result("API Javalin 2"));
+ 
+         AppModule.initUser().register(app);
++        AppModule.initProducts().register(app);
+     }
+ }
+\ No newline at end of file
+Index: src/main/java/org/alilopez/repository/ProductRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/alilopez/repository/ProductRepository.java b/src/main/java/org/alilopez/repository/ProductRepository.java
+new file mode 100644
+--- /dev/null	(date 1751047440588)
++++ b/src/main/java/org/alilopez/repository/ProductRepository.java	(date 1751047440588)
+@@ -0,0 +1,22 @@
++package org.alilopez.repository;
++
++import org.alilopez.config.DatabaseConfig;
++import org.alilopez.model.Product;
++import org.alilopez.model.User;
++
++import java.sql.Connection;
++import java.sql.PreparedStatement;
++import java.sql.SQLException;
++
++public class ProductRepository {
++    public void save(Product product) throws SQLException {
++        String query = "INSERT INTO product (name, email) VALUES (?, ?,?)";
++        try (Connection conn = DatabaseConfig.getDataSource().getConnection();
++             PreparedStatement stmt = conn.prepareStatement(query)) {
++            stmt.setString(1, product.getName());
++            stmt.setString(2, product.getStock());
++            stmt.setInt(3,product.getPrice());
++            stmt.executeUpdate();
++        }
++    }
++}
+Index: src/main/java/org/alilopez/model/Product.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/alilopez/model/Product.java b/src/main/java/org/alilopez/model/Product.java
+new file mode 100644
+--- /dev/null	(date 1751047440599)
++++ b/src/main/java/org/alilopez/model/Product.java	(date 1751047440599)
+@@ -0,0 +1,40 @@
++package org.alilopez.model;
++
++public class Product {
++    private int idProduct;
++    private String name;
++    private int stock;
++    private float price;
++
++    public int getIdProduct() {
++        return idProduct;
++    }
++
++    public String getName() {
++        return name;
++    }
++
++    public int getStock() {
++        return stock;
++    }
++
++    public float getPrice() {
++        return price;
++    }
++
++    public void setIdProduct(int idProduct) {
++        this.idProduct = idProduct;
++    }
++
++    public void setName(String name) {
++        this.name = name;
++    }
++
++    public void setStock(int stock) {
++        this.stock = stock;
++    }
++
++    public void setPrice(float price) {
++        this.price = price;
++    }
++}
+Index: src/main/java/org/alilopez/repository/UserRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.alilopez.repository;\r\n\r\nimport org.alilopez.config.DatabaseConfig;\r\nimport org.alilopez.model.User;\r\n\r\nimport java.sql.Connection;\r\nimport java.sql.PreparedStatement;\r\nimport java.sql.ResultSet;\r\nimport java.sql.SQLException;\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\npublic class UserRepository {\r\n    public List<User> findAll() throws SQLException {\r\n        List<User> users = new ArrayList<>();\r\n        String query = \"SELECT * FROM user\";\r\n        try (\r\n                Connection conn = DatabaseConfig.getDataSource().getConnection();\r\n                PreparedStatement stmt = conn.prepareStatement(query);\r\n                ResultSet rs = stmt.executeQuery()) {\r\n            while (rs.next()) {\r\n                User u = new User();\r\n                u.setId(rs.getInt(\"idUser\"));\r\n                u.setName(rs.getString(\"name\"));\r\n                u.setEmail(rs.getString(\"email\"));\r\n                users.add(u);\r\n            }\r\n        }\r\n        return users;\r\n    }\r\n\r\n    public User findByIdUser(int idUser) throws SQLException {\r\n        User user = null;\r\n        String query = \"SELECT * FROM user WHERE idUser = ?\";\r\n\r\n        try (Connection conn = DatabaseConfig.getDataSource().getConnection();\r\n             PreparedStatement stmt = conn.prepareStatement(query)) {\r\n\r\n            stmt.setInt(1, idUser);\r\n\r\n            try (ResultSet rs = stmt.executeQuery()) {\r\n                if (rs.next()) {\r\n                    user = new User();\r\n                    user.setId(rs.getInt(\"idUser\"));\r\n                    user.setName(rs.getString(\"name\"));\r\n                    user.setEmail(rs.getString(\"email\"));\r\n                }\r\n            }\r\n        }\r\n\r\n        return user;\r\n    }\r\n\r\n    public void save(User user) throws SQLException {\r\n        String query = \"INSERT INTO user (name, email) VALUES (?, ?)\";\r\n        try (Connection conn = DatabaseConfig.getDataSource().getConnection();\r\n             PreparedStatement stmt = conn.prepareStatement(query)) {\r\n            stmt.setString(1, user.getName());\r\n            stmt.setString(2, user.getEmail());\r\n            stmt.executeUpdate();\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/alilopez/repository/UserRepository.java b/src/main/java/org/alilopez/repository/UserRepository.java
+--- a/src/main/java/org/alilopez/repository/UserRepository.java	(revision abf61d57d29326cf52a4147413028b57f2734b54)
++++ b/src/main/java/org/alilopez/repository/UserRepository.java	(date 1750966357698)
+@@ -13,14 +13,14 @@
+ public class UserRepository {
+     public List<User> findAll() throws SQLException {
+         List<User> users = new ArrayList<>();
+-        String query = "SELECT * FROM user";
++        String query = "SELECT * FROM users";
+         try (
+                 Connection conn = DatabaseConfig.getDataSource().getConnection();
+                 PreparedStatement stmt = conn.prepareStatement(query);
+                 ResultSet rs = stmt.executeQuery()) {
+             while (rs.next()) {
+                 User u = new User();
+-                u.setId(rs.getInt("idUser"));
++                u.setId(rs.getInt("id"));
+                 u.setName(rs.getString("name"));
+                 u.setEmail(rs.getString("email"));
+                 users.add(u);
+@@ -31,7 +31,7 @@
+ 
+     public User findByIdUser(int idUser) throws SQLException {
+         User user = null;
+-        String query = "SELECT * FROM user WHERE idUser = ?";
++        String query = "SELECT * FROM users WHERE id = ?";
+ 
+         try (Connection conn = DatabaseConfig.getDataSource().getConnection();
+              PreparedStatement stmt = conn.prepareStatement(query)) {
+@@ -41,7 +41,7 @@
+             try (ResultSet rs = stmt.executeQuery()) {
+                 if (rs.next()) {
+                     user = new User();
+-                    user.setId(rs.getInt("idUser"));
++                    user.setId(rs.getInt("id"));
+                     user.setName(rs.getString("name"));
+                     user.setEmail(rs.getString("email"));
+                 }
+@@ -52,7 +52,7 @@
+     }
+ 
+     public void save(User user) throws SQLException {
+-        String query = "INSERT INTO user (name, email) VALUES (?, ?)";
++        String query = "INSERT INTO users (name, email) VALUES (?, ?)";
+         try (Connection conn = DatabaseConfig.getDataSource().getConnection();
+              PreparedStatement stmt = conn.prepareStatement(query)) {
+             stmt.setString(1, user.getName());
+Index: src/main/resources/.env
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>DB_HOST=34.198.42.145\r\nDB_SCHEMA=db_integrator\r\nDB_USER=lito\r\nDB_PASS=Lgfcldrcrdr2025*\r\nAPP_ENV=development
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/.env b/src/main/resources/.env
+--- a/src/main/resources/.env	(revision abf61d57d29326cf52a4147413028b57f2734b54)
++++ b/src/main/resources/.env	(date 1751341042005)
+@@ -1,5 +1,5 @@
+-DB_HOST=34.198.42.145
+-DB_SCHEMA=db_integrator
+-DB_USER=lito
+-DB_PASS=Lgfcldrcrdr2025*
++DB_HOST=localhost
++DB_SCHEMA=db_restapp
++DB_USER=root
++DB_PASS=edwardaniel
+ APP_ENV=development
+\ No newline at end of file
+Index: src/main/java/org/alilopez/routes/ProductsRouters.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/alilopez/routes/ProductsRouters.java b/src/main/java/org/alilopez/routes/ProductsRouters.java
+new file mode 100644
+--- /dev/null	(date 1751047440635)
++++ b/src/main/java/org/alilopez/routes/ProductsRouters.java	(date 1751047440635)
+@@ -0,0 +1,22 @@
++package org.alilopez.routes;
++
++import io.javalin.Javalin;
++import org.alilopez.controller.ProductController;
++import org.alilopez.controller.UserController;
++
++public class ProductsRouters {
++    private final ProductController productController;
++
++    public ProductsRouters(ProductController productController) {
++        this.productController = new ProductController;
++    }
++
++    public void register(Javalin app) {
++        app.get("/product", productController::getAll);
++        app.post("/product", productController::create);
++        app.get("/product/{idProduct}", productController::getById);
++        // Ejemplo de más rutas:
++        // app.put("/users/:id", userController::update);
++        // app.delete("/users/:id", userController::delete);
++    }
++}
+Index: src/main/java/org/alilopez/service/ProductService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/alilopez/service/ProductService.java b/src/main/java/org/alilopez/service/ProductService.java
+new file mode 100644
+--- /dev/null	(date 1751047440611)
++++ b/src/main/java/org/alilopez/service/ProductService.java	(date 1751047440611)
+@@ -0,0 +1,16 @@
++package org.alilopez.service;
++
++import org.alilopez.model.Product;
++import org.alilopez.repository.ProductRepository;
++
++import java.sql.SQLException;
++
++public class ProductService {
++    private final ProductRepository producRepo;
++    public ProductService(ProductRepository producRepo) {
++        this.producRepo = producRepo;
++    }
++    public void create(Product product) throws SQLException {
++        producRepo.save(product);
++    }
++}
