@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserRepository {
+
     public List<User> findAll() throws SQLException {
         List<User> usuario = new ArrayList<>();
         String query = "SELECT * FROM usuario";

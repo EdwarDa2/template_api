@@ -21,5 +21,9 @@ public class Main {
         AppModule.initUser().register(app);
         AppModule.initProductos().register(app);
         AppModule.initMesas().register(app);
+        AppModule.initComandas().register(app);
+        AppModule.initCategorias().register(app);
+        AppModule.initMeseros().register(app);
+        AppModule.inittotal().register(app);
     }
 }

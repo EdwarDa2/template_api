@@ -14,6 +14,25 @@ import org.alilopez.repository.ProductoRepository;
 import org.alilopez.routes.ProductoRoutes;
 import org.alilopez.service.ProductoService;
 
+import org.alilopez.controller.ComandaController;
+import org.alilopez.repository.ComandaRepository;
+import org.alilopez.routes.ComandaRoutes;
+import org.alilopez.service.ComandaService;
+
+import org.alilopez.controller.CategoriaController;
+import org.alilopez.repository.CategoriaRepository;
+import org.alilopez.routes.CategoriaRoutes;
+import org.alilopez.service.CategoriaService;
+
+import org.alilopez.controller.MeseroController;
+import org.alilopez.repository.MeseroRepository;
+import org.alilopez.routes.MeseroRoutes;
+import org.alilopez.service.MeseroService;
+
+import org.alilopez.controller.TotalController;
+import org.alilopez.repository.TotalRepository;
+import org.alilopez.routes.TotalRoutes;
+import org.alilopez.service.TotalService;
 
 public class AppModule {
     public static UserRoutes initUser() {
@@ -36,6 +55,36 @@ public class AppModule {
         MesasController mesasController = new MesasController(mesasService);
         MesasRoutes mesasRoutes = new MesasRoutes(mesasController);
         return mesasRoutes;
+
+    }
+    public static ComandaRoutes initComandas() {
+        ComandaRepository comandaRepository = new ComandaRepository();
+        ComandaService comandaService = new ComandaService(comandaRepository);
+        ComandaController comandaController = new ComandaController(comandaService);
+        ComandaRoutes comandaRoutes = new ComandaRoutes(comandaController);
+        return comandaRoutes;
+    }
+    public static CategoriaRoutes initCategorias(){
+        CategoriaRepository categoriaRepository = new CategoriaRepository();
+        CategoriaService categoriaService = new CategoriaService(categoriaRepository);
+        CategoriaController categoriaController = new CategoriaController(categoriaService);
+        CategoriaRoutes categoriaRoutes = new CategoriaRoutes(categoriaController);
+        return categoriaRoutes;
+    }
+    public static MeseroRoutes initMeseros(){
+        MeseroRepository meseroRepository = new MeseroRepository();
+        MeseroService meseroService = new MeseroService(meseroRepository);
+        MeseroController meseroController = new MeseroController(meseroService);
+        MeseroRoutes meseroRoutes = new MeseroRoutes(meseroController);
+        return meseroRoutes;
+
+    }
+    public static TotalRoutes inittotal(){
+        TotalRepository totalRepository = new TotalRepository();
+        TotalService totalService = new TotalService(totalRepository);
+        TotalController totalController = new TotalController(totalService);
+        TotalRoutes totalRoutes = new TotalRoutes(totalController);
+        return totalRoutes;
 
     }
 }
