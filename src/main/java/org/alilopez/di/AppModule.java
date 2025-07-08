@@ -34,6 +34,17 @@ import org.alilopez.repository.TotalRepository;
 import org.alilopez.routes.TotalRoutes;
 import org.alilopez.service.TotalService;
 
+import org.alilopez.controller.RolController;
+import org.alilopez.repository.RolRepository;
+import org.alilopez.routes.RolRoutes;
+import org.alilopez.service.RolService;
+
+
+import org.alilopez.controller.AdminController;
+import org.alilopez.repository.AdminRepository;
+import org.alilopez.routes.AdminRoutes;
+import org.alilopez.service.AdminService;
+
 public class AppModule {
     public static UserRoutes initUser() {
         UserRepository userRepo = new UserRepository();
@@ -79,12 +90,26 @@ public class AppModule {
         return meseroRoutes;
 
     }
-    public static TotalRoutes inittotal(){
+    public static TotalRoutes initTotal(){
         TotalRepository totalRepository = new TotalRepository();
         TotalService totalService = new TotalService(totalRepository);
         TotalController totalController = new TotalController(totalService);
         TotalRoutes totalRoutes = new TotalRoutes(totalController);
         return totalRoutes;
 
+    }
+    public static RolRoutes initRol() {
+        RolRepository rolRepository = new RolRepository();
+        RolService rolService = new RolService(rolRepository);
+        RolController rolController = new RolController(rolService);
+        RolRoutes rolRoutes = new RolRoutes(rolController);
+        return rolRoutes;
+    }
+    public static AdminRoutes initAdmins() {
+        AdminRepository adminRepository = new AdminRepository();
+        AdminService adminService = new AdminService(adminRepository);
+        AdminController adminController = new AdminController(adminService);
+        AdminRoutes adminRoutes = new AdminRoutes(adminController);
+        return adminRoutes;
     }
 }

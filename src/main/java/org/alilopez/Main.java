@@ -24,6 +24,8 @@ public class Main {
         AppModule.initComandas().register(app);
         AppModule.initCategorias().register(app);
         AppModule.initMeseros().register(app);
-        AppModule.inittotal().register(app);
+        AppModule.initTotal().register(app);
+        AppModule.initRol().register(app);
+        AppModule.initAdmins().register(app);
     }
 }
