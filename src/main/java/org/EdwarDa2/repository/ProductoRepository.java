@@ -43,7 +43,7 @@ public class ProductoRepository {
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
                     producto = new Producto();
-                    producto.setId_producto(rs.getInt("id"));
+                    producto.setId_producto(rs.getInt("id_producto"));
                     producto.setNombre(rs.getString("nombre"));
                     producto.setCantidad(rs.getInt("cantidad"));
                     producto.setPrecio(rs.getFloat("precio"));

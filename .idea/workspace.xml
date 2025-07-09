@@ -6,111 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="fd6834a3-c561-46d6-8a22-4a228e1bbaea" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/config/DatabaseConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/controller/AdminController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/controller/CategoriaController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/controller/ComandaController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/controller/MesasController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/controller/MeseroController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/controller/ProductoController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/controller/RolController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/controller/TotalController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/di/AppModule.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/model/Admin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/model/Categoria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/model/Comanda.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/model/Mesa.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/model/Mesero.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/model/Producto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/model/Rol.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/model/Total.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/repository/AdminRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/repository/CategoriaRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/repository/ComandaRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/repository/MesasRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/repository/MeseroRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/repository/ProductoRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/repository/RolRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/repository/TotalRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/repository/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/routes/AdminRoutes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/routes/CategoriaRoutes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/routes/ComandaRoutes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/routes/MesasRoutes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/routes/MeseroRoutes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/routes/ProductoRoutes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/routes/RolRoutes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/routes/TotalRoutes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/routes/UserRoutes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/service/AdminService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/service/CategoriaService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/service/ComandaService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/service/MesasService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/service/MeseroService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/service/ProductoService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/service/RolService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/service/TotalService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/alilopez/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/AppModule.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Main.class.uniqueId1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/config/DatabaseConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/config/DatabaseConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/controller/CategoriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/controller/CategoriaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/controller/ComandaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/controller/ComandaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/controller/MesasController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/controller/MesasController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/controller/MeseroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/controller/MeseroController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/controller/ProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/controller/ProductoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/controller/RolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/controller/RolController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/controller/TotalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/controller/TotalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/di/AppModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/di/AppModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/model/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Categoria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/model/Comanda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Comanda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/model/Mesa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Mesa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/model/Mesero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Mesero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/model/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Producto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/model/Rol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Rol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/model/Total.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Total.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/repository/AdminRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/AdminRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/repository/CategoriaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/CategoriaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/repository/ComandaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/ComandaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/repository/MesasRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/MesasRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/repository/MeseroRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/MeseroRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/repository/ProductoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/ProductoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/repository/RolRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/RolRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/repository/TotalRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/TotalRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/routes/AdminRoutes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/routes/AdminRoutes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/routes/CategoriaRoutes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/routes/CategoriaRoutes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/routes/ComandaRoutes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/routes/ComandaRoutes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/routes/MesasRoutes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/routes/MesasRoutes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/routes/MeseroRoutes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/routes/MeseroRoutes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/routes/ProductoRoutes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/routes/ProductoRoutes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/routes/RolRoutes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/routes/RolRoutes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/routes/TotalRoutes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/routes/TotalRoutes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/routes/UserRoutes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/routes/UserRoutes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/service/CategoriaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/CategoriaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/service/ComandaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/ComandaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/service/MesasService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/MesasService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/service/MeseroService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/MeseroService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/service/ProductoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/ProductoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/service/RolService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/RolService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/service/TotalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/TotalService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alilopez/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_06_2025_10_31_p__m___Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_06_2025_10_31_p_ m__[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/ProductoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/ProductoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/TotalRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/TotalRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,22 +82,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.template_api [:org.EdwarDa2.Main.main()].executor": "Run",
-    "Gradle.template_api [:org.alilopez.Main.main()].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.template_api [:org.EdwarDa2.Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.template_api [:org.alilopez.Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -232,6 +144,11 @@
       <workItem from="1751855920340" duration="6839000" />
       <workItem from="1751932629287" duration="6648000" />
       <workItem from="1751940350795" duration="101000" />
+      <workItem from="1751985652605" duration="1743000" />
+      <workItem from="1752005283933" duration="62000" />
+      <workItem from="1752008191518" duration="36000" />
+      <workItem from="1752022468718" duration="5287000" />
+      <workItem from="1752029616451" duration="1720000" />
     </task>
     <servers />
   </component>

@@ -40,7 +40,7 @@ public class TotalRepository {
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
                     total = new Total();
-                    total.setId_total(rs.getInt("id-total"));
+                    total.setId_total(rs.getInt("id_total"));
                     total.setPor_pagar(rs.getFloat("por_pagar"));
                 }
             }

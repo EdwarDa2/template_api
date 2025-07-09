@@ -1,12 +1,14 @@
 package org.EdwarDa2.model;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 public class User {
     private int id_usuario;
     private String nombre;
     private String apellidoP;
     private String email;
-    private String contrasena;
     private boolean rol = false;
+    @JsonIgnore
+    private String contrasena;
+
 
     public String getContrasena() {
         return contrasena;

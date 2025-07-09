@@ -1,10 +1,11 @@
 package org.EdwarDa2.service;
-
+import at.favre.lib.crypto.bcrypt.BCrypt;
 import org.EdwarDa2.model.User;
 import org.EdwarDa2.repository.UserRepository;
 
 import java.sql.SQLException;
 import java.util.List;
+
 
 public class UserService {
     private final UserRepository userRepo;
@@ -14,12 +15,13 @@ public class UserService {
     public List<User> getAllUsuario() throws SQLException {
         return userRepo.findAll();
     }
-
     public User getByIdUser(int id_usuario) throws SQLException {
         return userRepo.findByIdUser(id_usuario);
     }
 
     public void createUser(User user) throws SQLException {
+        String hashedContrasena = BCrypt.withDefaults().hashToString(12, user.getContrasena().toCharArray());
+        user.setContrasena(hashedContrasena);
         userRepo.save(user);
     }
 
