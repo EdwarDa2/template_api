@@ -47,6 +47,7 @@ public class CategoriaController {
                 ctx.status(400).result("Error al crear categoria");
             }
         }
+
         public void update(Context ctx) {
             try {
                 int id = Integer.parseInt(ctx.pathParam("id"));
@@ -64,7 +65,8 @@ public class CategoriaController {
                 ctx.status(500).result("Error al actualizar categoria: " + e.getMessage());
             }
         }
-        public void delete(Context ctx) {
+
+        public void delete(Context ctx)  {
             try {
                 int id = Integer.parseInt(ctx.pathParam("id"));
                 categoriaService.deleteCategoria(id);

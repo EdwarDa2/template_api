@@ -55,7 +55,7 @@ public class AdminRepository {
         String query = "INSERT INTO admins (id_usuario) VALUES (?)";
         try (Connection conn = DatabaseConfig.getDataSource().getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
-            stmt.setInt(1, admin.getId_admin());
+            stmt.setInt(1, admin.getId_usuario());
             stmt.executeUpdate();
 
         }

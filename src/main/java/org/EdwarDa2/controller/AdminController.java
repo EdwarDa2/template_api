@@ -26,7 +26,7 @@ public class AdminController {
 
     public void getById(Context ctx) {
         try {
-            int id = Integer.parseInt(ctx.pathParam("id_admin"));
+            int id = Integer.parseInt(ctx.pathParam("id"));
             Admin admin = adminService.getById_admin(id);
             if (admin != null) {
                 ctx.json(admin);

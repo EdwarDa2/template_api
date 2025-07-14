@@ -5,13 +5,12 @@ import org.EdwarDa2.repository.CategoriaRepository;
 
 import java.sql.SQLException;
 import java.util.List;
-
 public class CategoriaService {
-
     private final CategoriaRepository categoriaRepo;
     public CategoriaService(CategoriaRepository categoriaRepo) {
         this.categoriaRepo = categoriaRepo;
     }
+
     public List<Categoria> getAllCategoria() throws SQLException {
         return categoriaRepo.findAll();
     }

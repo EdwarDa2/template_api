@@ -3,7 +3,6 @@ package org.EdwarDa2.model;
 public class Producto {
     private int id_producto;
     private String nombre;
-    private int cantidad;
     private float precio ;
     private int id_categoria;
     private int id_subCategoria;
@@ -38,14 +37,6 @@ public class Producto {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
     }
 
     public float getPrecio() {

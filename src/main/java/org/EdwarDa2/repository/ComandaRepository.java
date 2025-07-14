@@ -5,8 +5,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 public class ComandaRepository {
         public List<Comanda> findAll() throws SQLException {
             List<Comanda> comandas = new ArrayList<>();
@@ -52,7 +50,6 @@ public class ComandaRepository {
 
             return comanda;
         }
-
         public void save(Comanda comanda) throws SQLException {
             String query = "INSERT INTO comandas (id_mesa,id_mesero,hora,id_producto) VALUES (?,?,?,?)";
             try (Connection conn = DatabaseConfig.getDataSource().getConnection();

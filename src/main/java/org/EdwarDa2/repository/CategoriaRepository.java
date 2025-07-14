@@ -71,6 +71,7 @@ public class CategoriaRepository {
                 stmt.executeUpdate();
             }
         }
+
         public void delete(int id_categoria) throws SQLException {
             String query = "DELETE FROM categorias WHERE id_categoria = ?";
 

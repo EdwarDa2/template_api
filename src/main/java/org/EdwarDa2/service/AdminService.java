@@ -1,11 +1,8 @@
 package org.EdwarDa2.service;
-
 import org.EdwarDa2.model.Admin;
 import org.EdwarDa2.repository.AdminRepository;
-
 import java.sql.SQLException;
 import java.util.List;
-
 public class AdminService {
     private final AdminRepository adminRepo;
     public AdminService(AdminRepository adminRepo) {

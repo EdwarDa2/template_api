@@ -1,11 +1,7 @@
 package org.EdwarDa2;
-
 import io.javalin.Javalin;
 import io.javalin.plugin.bundled.CorsPluginConfig;
 import org.EdwarDa2.di.AppModule;
-
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
 
@@ -15,7 +11,6 @@ public class Main {
             });
         }).start(7000);
 
-        // Rutas generales
         app.get("/", ctx -> ctx.result("API Javalin 2"));
 
         AppModule.initUser().register(app);
