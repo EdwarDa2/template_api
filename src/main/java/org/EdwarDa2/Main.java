@@ -22,5 +22,6 @@ public class Main {
         AppModule.initTotal().register(app);
         AppModule.initRol().register(app);
         AppModule.initAdmins().register(app);
+        AppModule.initAvisos().register(app);
     }
 }

@@ -1,49 +1,8 @@
 package org.EdwarDa2.di;
-import org.EdwarDa2.controller.UserController;
-import org.EdwarDa2.repository.UserRepository;
-import org.EdwarDa2.routes.UserRoutes;
-import org.EdwarDa2.service.UserService;
-
-import org.EdwarDa2.repository.MesasRepository;
-import org.EdwarDa2.routes.MesasRoutes;
-import org.EdwarDa2.service.MesasService;
-import org.EdwarDa2.controller.MesasController;
-
-import org.EdwarDa2.controller.ProductoController;
-import org.EdwarDa2.repository.ProductoRepository;
-import org.EdwarDa2.routes.ProductoRoutes;
-import org.EdwarDa2.service.ProductoService;
-
-import org.EdwarDa2.controller.ComandaController;
-import org.EdwarDa2.repository.ComandaRepository;
-import org.EdwarDa2.routes.ComandaRoutes;
-import org.EdwarDa2.service.ComandaService;
-
-import org.EdwarDa2.controller.CategoriaController;
-import org.EdwarDa2.repository.CategoriaRepository;
-import org.EdwarDa2.routes.CategoriaRoutes;
-import org.EdwarDa2.service.CategoriaService;
-
-import org.EdwarDa2.controller.MeseroController;
-import org.EdwarDa2.repository.MeseroRepository;
-import org.EdwarDa2.routes.MeseroRoutes;
-import org.EdwarDa2.service.MeseroService;
-
-import org.EdwarDa2.controller.TotalController;
-import org.EdwarDa2.repository.TotalRepository;
-import org.EdwarDa2.routes.TotalRoutes;
-import org.EdwarDa2.service.TotalService;
-
-import org.EdwarDa2.controller.RolController;
-import org.EdwarDa2.repository.RolRepository;
-import org.EdwarDa2.routes.RolRoutes;
-import org.EdwarDa2.service.RolService;
-
-
-import org.EdwarDa2.controller.AdminController;
-import org.EdwarDa2.repository.AdminRepository;
-import org.EdwarDa2.routes.AdminRoutes;
-import org.EdwarDa2.service.AdminService;
+import org.EdwarDa2.controller.*;
+import org.EdwarDa2.repository.*;
+import org.EdwarDa2.routes.*;
+import org.EdwarDa2.service.*;
 
 public class AppModule {
     public static UserRoutes initUser() {
@@ -111,5 +70,12 @@ public class AppModule {
         AdminController adminController = new AdminController(adminService);
         AdminRoutes adminRoutes = new AdminRoutes(adminController);
         return adminRoutes;
+    }
+    public  static AvisosRoutes initAvisos(){
+        AvisosRepository avisosRepository = new AvisosRepository();
+        AvisosService avisosService = new AvisosService(avisosRepository);
+        AvisosController avisosController = new AvisosController(avisosService);
+        AvisosRoutes avisosRoutes = new AvisosRoutes(avisosController);
+        return avisosRoutes;
     }
 }
