@@ -16,5 +16,7 @@ public class UserRoutes {
         app.get("/usuario/{id_usuario}", userController::getById);
         app.put("/usuario/{id}", userController::update);
         app.delete("/usuario/{id}", userController::delete);
+        app.get("/mesero/{id_mesero}", userController::getMeseroWithUser);
+        app.post("/mesero", userController::createMesero);
     }
 }

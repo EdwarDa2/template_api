@@ -1,8 +1,11 @@
 package org.EdwarDa2.config;
+
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import io.github.cdimascio.dotenv.Dotenv;
+
 import javax.sql.DataSource;
+
 public class DatabaseConfig {
     private static HikariDataSource dataSource;
 
