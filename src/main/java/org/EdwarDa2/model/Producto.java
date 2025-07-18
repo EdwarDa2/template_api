@@ -4,6 +4,7 @@ public class Producto {
     private int id_producto;
     private String nombre;
     private float precio ;
+    private int cantidad;
     private int id_categoria;
     private int id_subCategoria;
 
@@ -45,5 +46,13 @@ public class Producto {
 
     public void setPrecio(float precio) {
         this.precio = precio;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
 }

@@ -78,4 +78,11 @@ public class AppModule {
         AvisosRoutes avisosRoutes = new AvisosRoutes(avisosController);
         return avisosRoutes;
     }
+    public static StatsRoutes initStats() {
+        StatsRepository  statsRepository = new StatsRepository();
+        StatsService statsService = new StatsService(statsRepository);
+        StatsController  statsController = new StatsController(statsService);
+        StatsRoutes statsRoutes = new StatsRoutes(statsController);
+        return statsRoutes;
+    }
 }

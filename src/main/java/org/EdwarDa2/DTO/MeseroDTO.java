@@ -5,12 +5,14 @@ public class MeseroDTO {
     private int id_usuario;
     private int clave;
     private int id_mesero;
+    private Boolean rol;
 
-    public MeseroDTO(int id_usuario, String nombre, int clave, int id_mesero) {
+    public MeseroDTO(int id_usuario, String nombre, int clave, int id_mesero, Boolean rol) {
         this.id_usuario = id_usuario;
         this.nombre = nombre;
         this.clave = clave;
         this.id_mesero = id_mesero;
+        this.rol = false;
     }
 
     public String getNombre() {
@@ -43,5 +45,13 @@ public class MeseroDTO {
 
     public void setId_mesero(int id_mesero) {
         this.id_mesero = id_mesero;
+    }
+
+    public Boolean getRol() {
+        return rol;
+    }
+
+    public void setRol(Boolean rol) {
+        this.rol = rol;
     }
 }

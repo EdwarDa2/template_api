@@ -81,9 +81,9 @@ public class UserController {
     }
 
     public void getMeseroWithUser(Context ctx) {
-        String sql = "SELECT u.*, m.* FROM usuario u " +
-                "INNER JOIN meseros m ON u.idUsuario = m.idUsuario " +
-                "WHERE m.idMesero = ?";
+        String sql = "SELECT u.*, m.* As id_meseros FROM usuario u " +
+                "INNER JOIN meseros m ON u.id_usuario = m.id_mesero " +
+                "SELECT * FROM id_meseros";
 
         try (Connection conn = DatabaseConfig.getDataSource().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -94,7 +94,8 @@ public class UserController {
                 MeseroDTO meseroDTO = new MeseroDTO(rs.getInt("u.id_usuario"),
                         rs.getString("u.nombre"),
                         rs.getInt("m.clave"),
-                        rs.getInt("m.id_mesero")
+                        rs.getInt("m.id_mesero"),
+                        rs.getBoolean("m.rol")
 
                 );
                 ctx.json(meseroDTO);
@@ -111,7 +112,7 @@ public class UserController {
 
         MeseroDTO meseroDTO = ctx.bodyAsClass(MeseroDTO.class);
 
-        String insertUsuarioSQL = "INSERT INTO usuario (nombre) VALUES (? )";
+        String insertUsuarioSQL = "INSERT INTO usuario (nombre,rol) VALUES (?,?)";
         String insertMeseroSQL = "INSERT INTO meseros (id_usuario,clave, id_mesero) VALUES (?, ?, ?)";
 
         try (Connection conn = DatabaseConfig.getDataSource().getConnection()) {
@@ -132,6 +133,7 @@ public class UserController {
                             stmtMesero.setInt(1, id_usuario);
                             stmtMesero.setInt(2, meseroDTO.getClave());
                             stmtMesero.setInt(3, meseroDTO.getId_mesero());
+                            stmtMesero.setBoolean(4, meseroDTO.getRol());
                             stmtMesero.executeUpdate();
 
                             conn.commit();
@@ -141,12 +143,12 @@ public class UserController {
                 }
             } catch (SQLException e) {
                 conn.rollback();
-                ctx.status(500).result("Error al crear mesero");
+                ctx.status(500).result("Error al crear mesero" + e.getMessage());
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
-            ctx.status(500).result("Error en la base de datos");
+            ctx.status(500).result("Error en la base de datos" + e.getMessage());
         }
     }
 

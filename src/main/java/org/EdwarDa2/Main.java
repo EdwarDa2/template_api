@@ -23,5 +23,6 @@ public class Main {
         AppModule.initRol().register(app);
         AppModule.initAdmins().register(app);
         AppModule.initAvisos().register(app);
+        AppModule.initStats().register(app);
     }
 }
