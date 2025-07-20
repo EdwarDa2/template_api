@@ -47,7 +47,7 @@ public class ProductoController {
             ctx.status(201).result("Producto creado");
         } catch (Exception e) {
             e.printStackTrace();
-            ctx.status(400).result("Error al crear Producto");
+            ctx.status(400).result("Error al crear Producto" + e.getMessage());
         }
     }
     public void update(Context ctx) {

@@ -11,7 +11,7 @@ public class ComandaService {
             this.comandaRepo = comandaRepo;
         }
         public List<ComandaRequestDTO> getAllComanda() throws SQLException {
-            return comandaRepo.allProducts();
+            return comandaRepo.findAll();
         }
 
         public Comanda getById_comanda(int id_comanda) throws SQLException {

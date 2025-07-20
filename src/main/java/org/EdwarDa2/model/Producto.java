@@ -2,9 +2,10 @@ package org.EdwarDa2.model;
 
 public class Producto {
     private int id_producto;
+    private int id_subCategoria;
     private String nombre;
     private float precio ;
-    private int id_subCategoria;
+
 
     public int getId_subCategoria() {
         return id_subCategoria;

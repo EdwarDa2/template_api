@@ -5,34 +5,72 @@ import org.EdwarDa2.config.DatabaseConfig;
 import org.EdwarDa2.model.Comanda;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-
-
+import java.util.Map;
 
 
 public class ComandaRepository {
-        public List<ComandaRequestDTO> allProducts() throws SQLException {
-            List<ComandaRequestDTO> listaProductos = new ArrayList<>();
-            String query = "SELECT * FROM comandas";
-            try (
-                    Connection conn = DatabaseConfig.getDataSource().getConnection();
-                    PreparedStatement stmt = conn.prepareStatement(query);
-                    ResultSet rs = stmt.executeQuery()) {
-                while (rs.next()) {
-                    ComandaRequestDTO d = new ComandaRequestDTO();
-                    d.setId_comanda(rs.getInt("id_comanda"));
-                    d.setId_mesa(rs.getInt("id_mesa"));
-                    d.setId_mesero(rs.getInt("id_mesero"));
-                    d.setFecha_hora(rs.getTimestamp("fecha_hora").toLocalDateTime());
-                    d.setId_detalleComanda(rs.getInt("id_detalleComanda"));
-                    listaProductos.add(d);
+    public List<ComandaRequestDTO> findAll() throws SQLException {
+        List<ComandaRequestDTO> lista = new ArrayList<>();
+
+        String comandaQuery ="SELECT * FROM comandas";
+        String detalleQuery ="SELECT d.id_comanda, d.id_producto, d.cantidad, d.id_detallecomanda,d.comentario,p.nombre \n" +
+                "\t FROM detallecomanda d \n" +
+                "\t JOIN productos p  ON d.id_producto = p.id_producto;";
+
+        Map<Integer, ArrayList<DetalleComandaDTO>> productosPorComanda = new HashMap<>();
+
+        try (Connection conn = DatabaseConfig.getDataSource().getConnection()) {
+
+
+            try (PreparedStatement detalleStmt = conn.prepareStatement(detalleQuery);
+                 ResultSet drs = detalleStmt.executeQuery()) {
+                while (drs.next()) {
+                    int idComanda = drs.getInt("id_comanda");
+                    DetalleComandaDTO detalle = new DetalleComandaDTO();
+                    detalle.setId_comanda(drs.getInt("id_comanda"));
+                    detalle.setId_producto(drs.getInt("id_producto"));
+                    detalle.setCantidad(drs.getInt("cantidad"));
+                    detalle.setId_detalle(drs.getInt("id_detallecomanda"));
+                    detalle.setNombreProducto(drs.getString("nombre"));
+                    detalle.setComentario(drs.getString("comentario"));
+                    productosPorComanda
+                            .computeIfAbsent(idComanda, k -> new ArrayList<>())
+                            .add(detalle);
                 }
             }
-            return listaProductos;
+
+            try (PreparedStatement comandaStmt = conn.prepareStatement(comandaQuery);
+                 ResultSet rs = comandaStmt.executeQuery()) {
+
+                while (rs.next()) {
+                    int id_comanda = rs.getInt("id_comanda");
+                    int id_mesa = rs.getInt("id_mesa");
+                    int id_mesero = rs.getInt("id_mesero");
+                    Timestamp fecha = Timestamp.valueOf(rs.getTimestamp("fecha_hora").toLocalDateTime());
+
+                    ArrayList<DetalleComandaDTO> productos = productosPorComanda.getOrDefault(id_comanda, new ArrayList<>());
+
+                    ComandaRequestDTO dto = new ComandaRequestDTO(
+                            id_comanda,
+                            id_mesa,
+                            id_mesero,
+                            fecha.toLocalDateTime(),
+                            productos
+                    );
+
+                    lista.add(dto);
+                }
+            }
         }
 
+        return lista;
+    }
 
-        public Comanda findById_comanda(int id_comanda) throws SQLException {
+
+
+    public Comanda findById_comanda(int id_comanda) throws SQLException {
             Comanda comanda = null;
             String query = "SELECT * FROM comandas WHERE id_comanda = ?";
 
@@ -48,7 +86,7 @@ public class ComandaRepository {
                         comanda.setId_mesa(rs.getInt("id_mesa"));
                         comanda.setId_mesero(rs.getInt("id_mesero"));
                         comanda.setFecha_hora(rs.getTimestamp("fecha_hora").toLocalDateTime());
-                        comanda.setId_detalleComanda(rs.getInt("id_detalleComanda"));
+
 
                     }
                 }
@@ -57,8 +95,8 @@ public class ComandaRepository {
             return comanda;
         }
     public void save( ComandaRequestDTO comanda) throws SQLException {
-        String insertComanda = "INSERT INTO comandas (id_mesa, id_mesero, fecha_hora,id_detalleComanda) VALUES (?, ?, ?, ?)";
-        String insertDetalle = "INSERT INTO detalleComanda (id_comanda, id_producto, cantidad) VALUES (?, ?, ?)";
+        String insertComanda = "INSERT INTO comandas (id_mesa, id_mesero, fecha_hora) VALUES (?, ?, ?)";
+        String insertDetalle = "INSERT INTO detallecomanda (id_comanda, id_producto, cantidad) VALUES (?, ?, ?)";
 
         try (Connection conn = DatabaseConfig.getDataSource().getConnection()) {
             conn.setAutoCommit(false);
@@ -68,7 +106,6 @@ public class ComandaRepository {
                 stmt.setInt(1, comanda.getId_mesa());
                 stmt.setInt(2, comanda.getId_mesero());
                 stmt.setTimestamp(3, Timestamp.valueOf(comanda.getFecha_hora()));
-                stmt.setInt(4,comanda.getId_detalleComanda());
                 stmt.executeUpdate();
 
                 ResultSet rs = stmt.getGeneratedKeys();
@@ -82,26 +119,26 @@ public class ComandaRepository {
 
             try (PreparedStatement detalleStmt = conn.prepareStatement(insertDetalle)) {
                 for (DetalleComandaDTO producto : comanda.getListaProductos()) {
-                    detalleStmt.setInt(1, producto.getId_comanda());
+                    detalleStmt.setInt(1, idGenerado);
                     detalleStmt.setInt(2, producto.getId_producto());
                     detalleStmt.setInt(3, producto.getCantidad());
                     detalleStmt.addBatch();
                 }
                 detalleStmt.executeBatch();
             }
-
-
             conn.commit();
+        }catch (SQLException e) {
+            e.printStackTrace();
+            throw e;
         }
     }
         public void update(Comanda comanda) throws SQLException {
-            String query = "UPDATE comandas  SET id_mesa = ?, id_mesero = ?, fecha_hora = ?,id_detalleComanda = ? WHERE id_comanda = ?";
+            String query = "UPDATE comandas  SET id_mesa = ?, id_mesero = ?, fecha_hora = ? WHERE id_comanda = ?";
             try (Connection conn = DatabaseConfig.getDataSource().getConnection();
                  PreparedStatement stmt = conn.prepareStatement(query)) {
                 stmt.setInt(1, comanda.getId_mesa());
                 stmt.setInt(2, comanda.getId_mesero());
                 stmt.setTimestamp(3, Timestamp.valueOf(comanda.getFecha_hora()));
-                stmt.setInt(4, comanda.getId_detalleComanda());
                 stmt.setInt(5, comanda.getId_comanda());
                 stmt.executeUpdate();
             }
