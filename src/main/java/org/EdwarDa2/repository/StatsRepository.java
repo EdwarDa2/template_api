@@ -14,8 +14,10 @@ public class StatsRepository {
     public List<Stat> createStatsAverage() throws SQLException {
         List<Stat> stats = new ArrayList<>();
         String query = "SELECT \n" +
-                "    nombre,\n" +
-                "    (precio * cantidad) AS total_ingresos\n" +
+                "name,\n" +
+                "price,\n " +
+                "amount,\n" +
+                "    (price * amount) AS total_ingresos\n" +
                 "FROM \n" +
                 "    productos\n" +
                 "ORDER BY \n" +

@@ -4,17 +4,7 @@ public class Producto {
     private int id_producto;
     private String nombre;
     private float precio ;
-    private int cantidad;
-    private int id_categoria;
     private int id_subCategoria;
-
-    public int getId_categoria() {
-        return id_categoria;
-    }
-
-    public void setId_categoria(int id_categoria) {
-        this.id_categoria = id_categoria;
-    }
 
     public int getId_subCategoria() {
         return id_subCategoria;
@@ -48,11 +38,4 @@ public class Producto {
         this.precio = precio;
     }
 
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
 }

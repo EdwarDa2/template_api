@@ -8,6 +8,7 @@ import org.EdwarDa2.service.StatsService;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class StatsController {
     private final StatsService statsService;
@@ -28,7 +29,12 @@ public class StatsController {
                 tempAmount.add(stat.getAmount());
             }
             StatsDTO statsDTO = new StatsDTO(tempName, tempPrice,tempAmount);
-            ctx.json(statsDTO);
+            Map<String, Object> result = Map.of(
+                    "name", stats.stream().map(Stat::getName).toList(),
+                    "price", stats.stream().map(Stat::getPrice).toList(),
+                    "amount", stats.stream().map(Stat::getAmount).toList()
+            );
+            ctx.json(result);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             ctx.status(500).result("Error al obtener productos");

@@ -1,6 +1,8 @@
 package org.EdwarDa2.controller;
 import io.javalin.http.Context;
 import io.javalin.http.HttpStatus;
+import org.EdwarDa2.DTO.comandas.ComandaRequestDTO;
+import org.EdwarDa2.DTO.comandas.DetalleComandaDTO;
 import org.EdwarDa2.model.Comanda;
 import org.EdwarDa2.service.ComandaService;
 import java.sql.SQLException;
@@ -15,10 +17,10 @@ public class ComandaController {
 
         public void getAll(Context ctx) {
             try {
-                List<Comanda> comandas = comandaService.getAllComanda();
+                List<ComandaRequestDTO> comandas = comandaService.getAllComanda();
                 ctx.json(comandas);
             } catch (SQLException e) {
-                ctx.status(500).result("Error al obtener Comandas");
+                ctx.status(500).result("Error al obtener Comandas" + e.getMessage());
             }
         }
 
@@ -32,18 +34,18 @@ public class ComandaController {
                     ctx.status(HttpStatus.NOT_FOUND).result("comanda no encontrada");
                 }
             } catch (Exception e) {
-                ctx.status(404).result("Error al obtener comandas");
+                ctx.status(404).result("Error al obtener comandas"+e.getMessage());
             }
         }
 
         public void create(Context ctx) {
             try {
-                Comanda comanda = ctx.bodyAsClass(Comanda.class);
+                ComandaRequestDTO comanda = ctx.bodyAsClass(ComandaRequestDTO.class);
                 comandaService.createComanda(comanda);
                 ctx.status(201).result("comanda creada");
             } catch (Exception e) {
                 e.printStackTrace();
-                ctx.status(400).result("Error al crear Comanda");
+                ctx.status(400).result("Error al crear Comanda"+e.getMessage());
             }
         }
         public void update(Context ctx) {
