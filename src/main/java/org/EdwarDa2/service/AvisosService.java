@@ -8,9 +8,11 @@ import java.util.List;
 
 public class AvisosService {
     private final AvisosRepository avisosRepo;
+
     public AvisosService(AvisosRepository avisosRepo) {
         this.avisosRepo = avisosRepo;
     }
+
     public List<Aviso> getAllAviso() throws SQLException {
         return avisosRepo.findAll();
     }
@@ -19,9 +21,10 @@ public class AvisosService {
         return avisosRepo.findById_aviso(id_aviso);
     }
 
-    public void createAviso(Aviso aviso) throws SQLException {
-        avisosRepo.save(aviso);
+    public int createAviso(Aviso aviso) throws SQLException {
+        return avisosRepo.insert(aviso);
     }
+
     public void updateAviso(Aviso aviso) throws SQLException {
         avisosRepo.update(aviso);
     }
@@ -29,6 +32,4 @@ public class AvisosService {
     public void deleteAviso(int id_aviso) throws SQLException {
         avisosRepo.delete(id_aviso);
     }
-
-
 }

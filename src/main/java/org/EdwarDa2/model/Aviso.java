@@ -1,10 +1,13 @@
 package org.EdwarDa2.model;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 public class Aviso {
     private int id_aviso;
     private int id_usuario;
-    private LocalDate fecha;
+    private LocalDateTime fecha;
     private String contenido;
+
+    public Aviso() {}
 
     public int getId_aviso() {
         return id_aviso;
@@ -22,11 +25,11 @@ public class Aviso {
         this.id_usuario = id_usuario;
     }
 
-    public LocalDate getFecha() {
+    public LocalDateTime getFecha() {
         return fecha;
     }
 
-    public void setFecha(LocalDate fecha) {
+    public void setFecha(LocalDateTime fecha) {
         this.fecha = fecha;
     }
 

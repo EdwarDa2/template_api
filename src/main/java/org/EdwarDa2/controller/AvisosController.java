@@ -1,81 +1,62 @@
 package org.EdwarDa2.controller;
 
 import io.javalin.http.Context;
-import io.javalin.http.HttpStatus;
+import org.EdwarDa2.DTO.comandas.AvisoRequestDTO;
 import org.EdwarDa2.model.Aviso;
 import org.EdwarDa2.service.AvisosService;
 
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class AvisosController {
-    private final AvisosService avisosService;
+    private final AvisosService service;
 
-    public AvisosController(AvisosService avisosService   ) {
-        this.avisosService = avisosService;
+    public AvisosController(AvisosService service) {
+        this.service = service;
     }
 
-    public void getAll(Context ctx) {
-        try {
-            List<Aviso> avisos = avisosService.getAllAviso();
-            ctx.json(avisos);
-        } catch (SQLException e) {
-            ctx.status(500).result("Error al obtener Avisos");
+    public void getAll(Context ctx) throws SQLException {
+        List<Aviso> avisos = service.getAllAviso();
+        ctx.json(avisos);
+    }
+
+    public void getById(Context ctx) throws SQLException {
+        int id = Integer.parseInt(ctx.pathParam("id"));
+        Aviso aviso = service.getById_aviso(id);
+        if (aviso != null) {
+            ctx.json(aviso);
+        } else {
+            ctx.status(404).result("Aviso no encontrado");
         }
     }
 
-    public void getById(Context ctx) {
-        try {
-            int id = Integer.parseInt(ctx.pathParam("Id_aviso"));
-            Aviso aviso = avisosService.getById_aviso(id);
-            if (aviso != null) {
-                ctx.json(aviso);
-            } else {
-                ctx.status(HttpStatus.NOT_FOUND).result("AVISO no encontrada");
-            }
-        } catch (Exception e) {
-            ctx.status(404).result("Error al obtener avisos");
+    public void create(Context ctx) throws SQLException {
+        AvisoRequestDTO dto = ctx.bodyAsClass(AvisoRequestDTO.class);
+        Aviso aviso = new Aviso();
+        aviso.setId_usuario(dto.id_usuario);
+        aviso.setContenido(dto.contenido);
+        aviso.setFecha(LocalDateTime.now());
+
+        int idGenerado = service.createAviso(aviso);
+        if (idGenerado != -1) {
+            ctx.status(201).result(String.valueOf(idGenerado));
+        } else {
+            ctx.status(500).result("Error al crear aviso");
         }
     }
 
-    public void create(Context ctx) {
-        try {
-            Aviso aviso = ctx.bodyAsClass(Aviso.class);
-            avisosService.createAviso(aviso);
-            ctx.status(201).result("aviso creado");
-        } catch (Exception e) {
-            e.printStackTrace();
-            ctx.status(400).result("Error al crear aviso");
-        }
-    }
-    public void update(Context ctx) {
-        try {
-            int id = Integer.parseInt(ctx.pathParam("id"));
-            Aviso aviso = ctx.bodyAsClass(Aviso.class);
-            if (aviso.getId_aviso() != id) {
-                ctx.status(400).result("ID en la URL no coincide con el ID en el cuerpo de la solicitud.");
-                return;
-            }
-            avisosService.updateAviso(aviso);
-            ctx.status(200).result("Aviso actualizado exitosamente");
-        } catch (NumberFormatException e) {
-            ctx.status(400).result("ID de aviso inválido.");
-        } catch (Exception e) {
-            e.printStackTrace();
-            ctx.status(500).result("Error al actualizar aviso: " + e.getMessage());
-        }
-    }
-    public void delete(Context ctx) {
-        try {
-            int id = Integer.parseInt(ctx.pathParam("id"));
-            avisosService.deleteAviso(id);
-            ctx.status(204).result("Aviso eliminado exitosamente");
-        } catch (NumberFormatException e) {
-            ctx.status(400).result("ID de aviso inválido.");
-        } catch (Exception e) {
-            e.printStackTrace();
-            ctx.status(500).result("Error al eliminar aviso: " + e.getMessage());
-        }
+    public void update(Context ctx) throws SQLException {
+        int id = Integer.parseInt(ctx.pathParam("id"));
+        Aviso aviso = ctx.bodyAsClass(Aviso.class);
+        aviso.setId_aviso(id);
+        service.updateAviso(aviso);
+        ctx.status(204);
     }
 
+    public void delete(Context ctx) throws SQLException {
+        int id = Integer.parseInt(ctx.pathParam("id"));
+        service.deleteAviso(id);
+        ctx.status(204);
+    }
 }
