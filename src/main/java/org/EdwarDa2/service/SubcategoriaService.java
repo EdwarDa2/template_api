@@ -1,4 +1,4 @@
-ppackage org.EdwarDa2.service;
+package org.EdwarDa2.service;
 
 import org.EdwarDa2.model.Subcategoria;
 import org.EdwarDa2.repository.SubcategoriaRepository;

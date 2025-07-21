@@ -85,4 +85,11 @@ public class AppModule {
         StatsRoutes statsRoutes = new StatsRoutes(statsController);
         return statsRoutes;
     }
-}
+    public static SubcategoriaRoutes initSubcategorias() {
+        SubcategoriaRepository subcategoriaRepository = new SubcategoriaRepository();
+        SubcategoriaService subcategoriaService = new SubcategoriaService(subcategoriaRepository);
+        SubcategoriaController subcategoriaController = new SubcategoriaController(subcategoriaService);
+        SubcategoriaRoutes subcategoriaRoutes = new SubcategoriaRoutes(subcategoriaController);
+        return subcategoriaRoutes;
+    }
+

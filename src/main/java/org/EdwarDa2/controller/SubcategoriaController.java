@@ -10,7 +10,7 @@ public class SubcategoriaController {
 
     private final SubcategoriaService subcategoriaService;
 
-    public SubategoriaController(SucategoriaService subcategoriaService   ) {
+    public SubcategoriaController(SubcategoriaService subcategoriaService   ) {
         this.subcategoriaService = subcategoriaService;
     }
 

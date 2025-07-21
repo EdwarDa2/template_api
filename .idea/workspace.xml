@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd6834a3-c561-46d6-8a22-4a228e1bbaea" name="Changes" comment="AVISOSNEW">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/controller/SubcategoriaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Subcategoria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/SubcategoriaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/routes/SubcategoriaRoutes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/SubcategoriaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/controller/SubcategoriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/controller/SubcategoriaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/di/AppModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/di/AppModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/SubcategoriaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/SubcategoriaService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +234,7 @@
       <workItem from="1753043324995" duration="89000" />
       <workItem from="1753043535142" duration="9029000" />
       <workItem from="1753071409635" duration="1990000" />
-      <workItem from="1753079357586" duration="3801000" />
+      <workItem from="1753079357586" duration="6580000" />
     </task>
     <task id="LOCAL-00001" summary="AVISOSNEW">
       <option name="closed" value="true" />
