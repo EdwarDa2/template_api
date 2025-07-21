@@ -9,6 +9,6 @@ public class StatsRoutes {
         this.statsController = statsController;
     }
     public void register(Javalin app) {
-        app.get("/stats/average", statsController::createStatsAverage);
+        app.get("/stats/average", statsController::obtenerGananciaPorMesa);
     }
 }

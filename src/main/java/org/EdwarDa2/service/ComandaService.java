@@ -21,10 +21,6 @@ public class ComandaService {
         public void createComanda(ComandaRequestDTO comanda) throws SQLException {
             comandaRepo.save(comanda);
         }
-        public void updateComanda(Comanda comanda) throws SQLException {
-            comandaRepo.update(comanda);
-        }
-
         public void deleteComanda(int id_comanda) throws SQLException {
             comandaRepo.delete(id_comanda);
         }

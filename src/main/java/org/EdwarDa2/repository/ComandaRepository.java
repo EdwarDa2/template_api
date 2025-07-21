@@ -132,20 +132,9 @@ public class ComandaRepository {
             throw e;
         }
     }
-        public void update(Comanda comanda) throws SQLException {
-            String query = "UPDATE comandas  SET id_mesa = ?, id_mesero = ?, fecha_hora = ? WHERE id_comanda = ?";
-            try (Connection conn = DatabaseConfig.getDataSource().getConnection();
-                 PreparedStatement stmt = conn.prepareStatement(query)) {
-                stmt.setInt(1, comanda.getId_mesa());
-                stmt.setInt(2, comanda.getId_mesero());
-                stmt.setTimestamp(3, Timestamp.valueOf(comanda.getFecha_hora()));
-                stmt.setInt(5, comanda.getId_comanda());
-                stmt.executeUpdate();
-            }
-        }
+
         public void delete(int id_comanda) throws SQLException {
             String query = "DELETE FROM comandas WHERE id_comanda = ?";
-
             try (Connection conn = DatabaseConfig.getDataSource().getConnection();
                  PreparedStatement stmt = conn.prepareStatement(query)) {
                 stmt.setInt(1, id_comanda);

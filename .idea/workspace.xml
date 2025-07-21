@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd6834a3-c561-46d6-8a22-4a228e1bbaea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/DTO/comandas/ComandaRequestDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/DTO/comandas/DetalleComandaDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" afterDir="false" />
@@ -15,15 +13,19 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/model/Producto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/model/Producto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/repository/ProductoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/repository/ProductoRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/controller/ComandaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/controller/ComandaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/repository/ComandaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/repository/ComandaRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/service/ComandaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/service/ComandaService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/DTO/StatsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/DTO/StatsDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/controller/ComandaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/controller/ComandaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/controller/StatsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/controller/StatsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Comanda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Comanda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Stat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Stat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/ComandaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/ComandaRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/StatsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/StatsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/routes/ComandaRoutes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/routes/ComandaRoutes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/routes/StatsRoutes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/routes/StatsRoutes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/ComandaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/ComandaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/StatsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/StatsService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +96,7 @@
     &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.template_api [:org.EdwarDa2.Main.main()].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.template_api [:org.alilopez.Main.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.template_api [shadowJar].executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.template_api [shadowJar].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
@@ -213,7 +215,9 @@
       <workItem from="1752822088712" duration="1594000" />
       <workItem from="1752855632889" duration="1754000" />
       <workItem from="1752858759546" duration="802000" />
-      <workItem from="1752947515185" duration="9540000" />
+      <workItem from="1752947515185" duration="38078000" />
+      <workItem from="1753043324995" duration="89000" />
+      <workItem from="1753043535142" duration="9029000" />
     </task>
     <servers />
   </component>
@@ -233,6 +237,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.sql.SQLSyntaxErrorException" package="java.sql" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

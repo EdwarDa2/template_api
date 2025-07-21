@@ -10,7 +10,6 @@ public class ComandaRoutes {
             app.get("/comandas", comandaController::getAll);
             app.post("/comandas", comandaController::create);
             app.get("/comandas/{id_comanda}", comandaController::getById);
-            app.put("/comandas/{id}", comandaController::update);
             app.delete("/comandas/{id}", comandaController::delete);
 
         }

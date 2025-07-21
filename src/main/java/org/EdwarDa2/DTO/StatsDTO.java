@@ -4,35 +4,26 @@ package org.EdwarDa2.DTO;
 import java.util.List;
 
 public class StatsDTO {
-    List<String> name;
-    List<Float> price;
-    List<Integer> amount;
-    public StatsDTO(List<String> name, List<Float> price, List<Integer> amount) {
-        this.name = name;
-        this.price = price;
-        this.amount = amount;
-    }
-    public List<String> getName() {
-        return name;
+    List<String> nombre;
+    List<Float> precio;
+    public StatsDTO(List<String> nombre, List<Float> precio) {
+        this.nombre = nombre;
+        this.precio = precio;
     }
 
-    public void setName(List<String> name) {
-        this.name = name;
+    public List<String> getNombre() {
+        return nombre;
     }
 
-    public List<Float> getPrice() {
-        return price;
+    public void setNombre(List<String> nombre) {
+        this.nombre = nombre;
     }
 
-    public void setPrice(List<Float> price) {
-        this.price = price;
+    public List<Float> getPrecio() {
+        return precio;
     }
 
-    public List<Integer> getAmount() {
-        return amount;
-    }
-
-    public void setAmount(List<Integer> amount) {
-        this.amount = amount;
+    public void setPrecio(List<Float> precio) {
+        this.precio = precio;
     }
 }

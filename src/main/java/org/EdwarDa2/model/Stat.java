@@ -1,19 +1,22 @@
 package org.EdwarDa2.model;
 
 public class Stat {
-    String name;
-    Float price;
-    int amount;
+  private String nombre;
+  private Float precio;
 
-    public String getName() {return name;}
+    public String getNombre() {
+        return nombre;
+    }
 
-    public void setName(String name) {this.name = name;}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-    public Float getPrice() {return price;}
+    public Float getPrecio() {
+        return precio;
+    }
 
-    public void setPrice(Float price) {this.price = price;}
-
-    public int getAmount() {return amount;}
-
-    public void setAmount(int amount) {this.amount = amount;}
+    public void setPrecio(Float precio) {
+        this.precio = precio;
+    }
 }

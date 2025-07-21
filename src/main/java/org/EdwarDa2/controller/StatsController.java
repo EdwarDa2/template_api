@@ -1,12 +1,11 @@
 package org.EdwarDa2.controller;
 
 import io.javalin.http.Context;
-import org.EdwarDa2.DTO.StatsDTO;
-import org.EdwarDa2.model.Stat;
+import org.EdwarDa2.repository.StatsRepository;
 import org.EdwarDa2.service.StatsService;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Map;
 
@@ -16,28 +15,18 @@ public class StatsController {
     public StatsController(StatsService statsService) {
         this.statsService = statsService;
     }
+    public void obtenerGananciaPorMesa(Context ctx) {
+        String fechaInicio = ctx.queryParam("fecha_inicio");
+        String fechaFin = ctx.queryParam("fecha_fin");
 
-    public void createStatsAverage(Context ctx) {
         try {
-            List<Stat> stats = statsService.createStatsAverage();
-            List<String> tempName = new ArrayList<>();
-            List<Float> tempPrice = new ArrayList<>();
-            List<Integer> tempAmount = new ArrayList<>();
-            for (Stat stat : stats) {
-                tempName.add(stat.getName());
-                tempPrice.add(stat.getPrice());
-                tempAmount.add(stat.getAmount());
-            }
-            StatsDTO statsDTO = new StatsDTO(tempName, tempPrice,tempAmount);
-            Map<String, Object> result = Map.of(
-                    "name", stats.stream().map(Stat::getName).toList(),
-                    "price", stats.stream().map(Stat::getPrice).toList(),
-                    "amount", stats.stream().map(Stat::getAmount).toList()
-            );
-            ctx.json(result);
+            List<Map<String, Object>> data = new StatsRepository().getGananciaPorMesa(fechaInicio, fechaFin);
+            ctx.json(data);
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
-            ctx.status(500).result("Error al obtener productos");
+            e.printStackTrace();
+            ctx.status(500).result("Error al obtener ganancias filtradas por fecha"+e.getMessage());
         }
     }
+
+
 }

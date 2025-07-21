@@ -2,7 +2,6 @@ package org.EdwarDa2.controller;
 import io.javalin.http.Context;
 import io.javalin.http.HttpStatus;
 import org.EdwarDa2.DTO.comandas.ComandaRequestDTO;
-import org.EdwarDa2.DTO.comandas.DetalleComandaDTO;
 import org.EdwarDa2.model.Comanda;
 import org.EdwarDa2.service.ComandaService;
 import java.sql.SQLException;
@@ -48,30 +47,13 @@ public class ComandaController {
                 ctx.status(400).result("Error al crear Comanda"+e.getMessage());
             }
         }
-        public void update(Context ctx) {
-            try {
-                int id = Integer.parseInt(ctx.pathParam("id"));
-                Comanda comanda = ctx.bodyAsClass(Comanda.class);
-                if (comanda.getId_comanda() != id) {
-                    ctx.status(400).result("ID en la URL no coincide con el ID en el cuerpo de la solicitud.");
-                    return;
-                }
-                comandaService.updateComanda(comanda);
-                ctx.status(200).result("Comanda actualizada exitosamente");
-            } catch (NumberFormatException e) {
-                ctx.status(400).result("ID de comanda inválido.");
-            } catch (Exception e) {
-                e.printStackTrace();
-                ctx.status(500).result("Error al actualizar comanda: " + e.getMessage());
-            }
-        }
         public void delete(Context ctx) {
             try {
                 int id = Integer.parseInt(ctx.pathParam("id"));
                 comandaService.deleteComanda(id);
-                ctx.status(204).result("Comanda eliminada exitosamente");
+                ctx.status(200).result("Comanda eliminada exitosamente");
             } catch (NumberFormatException e) {
-                ctx.status(400).result("ID de comanda inválido.");
+                ctx.status(400).result("ID de comanda inválido."+e.getMessage());
             } catch (Exception e) {
                 e.printStackTrace();
                 ctx.status(500).result("Error al eliminar comanda: " + e.getMessage());
