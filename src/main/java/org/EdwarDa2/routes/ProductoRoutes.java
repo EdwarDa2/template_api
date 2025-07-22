@@ -13,7 +13,7 @@ public class ProductoRoutes {
     public void register(Javalin app) {
         app.get("/productos", productoController::getAll);
         app.post("/productos", productoController::create);
-        app.get("/productos/{id_producto}", productoController::getById);
+        app.get("/productos/subcategoria/{id_subcategoria}", productoController::getBySubcategoria);
         app.put("/productos/{id}", productoController::update);
         app.delete("/productos/{id}", productoController::delete);
     }

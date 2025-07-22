@@ -26,19 +26,21 @@ public class ProductoController {
         }
     }
 
-    public void getById(Context ctx) {
+    public void getBySubcategoria(Context ctx) {
         try {
-            int id = Integer.parseInt(ctx.pathParam("id_producto"));
-            Producto producto = productoService.getById_Producto(id);
-            if (producto != null) {
-                ctx.json(producto);
+            int id_subcategoria = Integer.parseInt(ctx.pathParam("id_subcategoria"));
+            List<Producto> productos = productoService.getBySubcategoria(id_subcategoria);
+
+            if (productos.isEmpty()) {
+                ctx.status(HttpStatus.NOT_FOUND).result("No se encontraron productos");
             } else {
-                ctx.status(HttpStatus.NOT_FOUND).result("Producto no encontrado");
+                ctx.json(productos); // Devuelve la lista de productos como JSON
             }
         } catch (Exception e) {
-            ctx.status(404).result("Error al obtener productos");
+            ctx.status(404).result("Error al obtener productos: " + e.getMessage());
         }
     }
+
 
     public void create(Context ctx) {
         try {

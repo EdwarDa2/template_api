@@ -15,8 +15,8 @@ public class ProductoService {
         return productoRepo.findAll();
     }
 
-    public Producto getById_Producto(int id_producto) throws SQLException {
-        return productoRepo.findById_producto(id_producto);
+    public List<Producto> getBySubcategoria(int id_subcategoria) throws SQLException {
+        return productoRepo.findBySubcategoria(id_subcategoria);
     }
 
     public void createProducto(Producto producto) throws SQLException {

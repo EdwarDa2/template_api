@@ -29,28 +29,30 @@ public class ProductoRepository {
         return productos;
     }
 
-    public Producto findById_producto(int id_producto) throws SQLException {
-        Producto producto = null;
-        String query = "SELECT * FROM productos WHERE id_producto = ?";
+    public List<Producto> findBySubcategoria(int id_subcategoria) throws SQLException {
+        List<Producto> productos = new ArrayList<>();
+        String query = "SELECT * FROM productos WHERE id_subcategoria = ?";
 
         try (Connection conn = DatabaseConfig.getDataSource().getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
-            stmt.setInt(1, id_producto);
+            stmt.setInt(1, id_subcategoria);
 
             try (ResultSet rs = stmt.executeQuery()) {
-                if (rs.next()) {
-                    producto = new Producto();
+                while (rs.next()) {
+                    Producto producto = new Producto();
                     producto.setId_producto(rs.getInt("id_producto"));
                     producto.setNombre(rs.getString("nombre"));
                     producto.setPrecio(rs.getFloat("precio"));
-                    producto.setId_subCategoria(rs.getInt("id_subCategoria"));
+                    producto.setId_subCategoria(rs.getInt("id_subcategoria"));
+                    productos.add(producto);
                 }
             }
         }
 
-        return producto;
+        return productos;
     }
+
 
     public void save(Producto producto) throws SQLException {
         String query = "INSERT INTO productos (nombre,precio,id_SubCategoria) VALUES (?,?,?)";
