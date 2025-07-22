@@ -2,32 +2,22 @@ package org.EdwarDa2.model;
 public class User {
     private int id_usuario;
     private String nombre;
-    private String apellidoP;
-    private String email;
-    private boolean rol = false;
-    private String contrasena;
+    private String apellido_p;
+    private String apellido_m;
+    private Integer rol; // Tipo de usuario (rol)
 
-    public String getContrasena() { return contrasena;}
-
-    public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
+    public User() {
     }
 
-    public boolean isRol() {
-        return rol;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setRol(boolean rol) {
+    public User(String nombre, String apellido_p, String apellido_m, Integer rol) {
+        this.nombre = nombre;
+        this.apellido_p = apellido_p;
+        this.apellido_m = apellido_m;
         this.rol = rol;
     }
+
+    // Getters y setters
+
 
     public int getId_usuario() {
         return id_usuario;
@@ -37,21 +27,16 @@ public class User {
         this.id_usuario = id_usuario;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+    public String getApellido_p() { return apellido_p; }
+    public void setApellido_p(String apellido_p) { this.apellido_p = apellido_p; }
 
-    public String getApellidoP() {
-        return apellidoP;
-    }
+    public String getApellido_m() { return apellido_m; }
+    public void setApellido_m(String apellido_m) { this.apellido_m = apellido_m; }
 
-    public void setApellidoP(String apellidoP) {
-        this.apellidoP = apellidoP;
-    }
-
-
+    public Integer getRol() { return rol; }
+    public void setRol(Integer rol) { this.rol = rol; }
 }
+

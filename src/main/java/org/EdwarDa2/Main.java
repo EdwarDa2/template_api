@@ -13,7 +13,7 @@ public class Main {
 
         app.get("/", ctx -> ctx.result("API Javalin 2"));
 
-        AppModule.initUser().register(app);
+
         AppModule.initProductos().register(app);
         AppModule.initMesas().register(app);
         AppModule.initComandas().register(app);

@@ -5,12 +5,7 @@ import org.EdwarDa2.routes.*;
 import org.EdwarDa2.service.*;
 
 public class AppModule {
-    public static UserRoutes initUser() {
-        UserRepository userRepo = new UserRepository();
-        UserService userService = new UserService(userRepo);
-        UserController userController = new UserController(userService);
-        return new UserRoutes(userController);
-    }
+
 
     public static ProductoRoutes initProductos() {
         ProductoRepository productoRepository = new ProductoRepository();
@@ -19,6 +14,7 @@ public class AppModule {
         ProductoRoutes productosRoutes = new ProductoRoutes(productoController);
         return productosRoutes;
     }
+
     public static MesasRoutes initMesas() {
         MesasRepository mesasRepository = new MesasRepository();
         MesasService mesasService = new MesasService(mesasRepository);
@@ -27,6 +23,7 @@ public class AppModule {
         return mesasRoutes;
 
     }
+
     public static ComandaRoutes initComandas() {
         ComandaRepository comandaRepository = new ComandaRepository();
         ComandaService comandaService = new ComandaService(comandaRepository);
@@ -34,22 +31,26 @@ public class AppModule {
         ComandaRoutes comandaRoutes = new ComandaRoutes(comandaController);
         return comandaRoutes;
     }
-    public static CategoriaRoutes initCategorias(){
+
+    public static CategoriaRoutes initCategorias() {
         CategoriaRepository categoriaRepository = new CategoriaRepository();
         CategoriaService categoriaService = new CategoriaService(categoriaRepository);
         CategoriaController categoriaController = new CategoriaController(categoriaService);
         CategoriaRoutes categoriaRoutes = new CategoriaRoutes(categoriaController);
         return categoriaRoutes;
     }
-    public static MeseroRoutes initMeseros(){
+
+    public static MeseroRoutes initMeseros() {
         MeseroRepository meseroRepository = new MeseroRepository();
-        MeseroService meseroService = new MeseroService(meseroRepository);
+        UserRepository userRepository = new UserRepository();
+        MeseroService meseroService = new MeseroService(userRepository,meseroRepository);
         MeseroController meseroController = new MeseroController(meseroService);
         MeseroRoutes meseroRoutes = new MeseroRoutes(meseroController);
         return meseroRoutes;
 
     }
-    public static TotalRoutes initTotal(){
+
+    public static TotalRoutes initTotal() {
         TotalRepository totalRepository = new TotalRepository();
         TotalService totalService = new TotalService(totalRepository);
         TotalController totalController = new TotalController(totalService);
@@ -57,6 +58,7 @@ public class AppModule {
         return totalRoutes;
 
     }
+
     public static RolRoutes initRol() {
         RolRepository rolRepository = new RolRepository();
         RolService rolService = new RolService(rolRepository);
@@ -64,6 +66,7 @@ public class AppModule {
         RolRoutes rolRoutes = new RolRoutes(rolController);
         return rolRoutes;
     }
+
     public static AdminRoutes initAdmins() {
         AdminRepository adminRepository = new AdminRepository();
         AdminService adminService = new AdminService(adminRepository);
@@ -71,20 +74,23 @@ public class AppModule {
         AdminRoutes adminRoutes = new AdminRoutes(adminController);
         return adminRoutes;
     }
-    public  static AvisosRoutes initAvisos(){
+
+    public static AvisosRoutes initAvisos() {
         AvisosRepository avisosRepository = new AvisosRepository();
         AvisosService avisosService = new AvisosService(avisosRepository);
         AvisosController avisosController = new AvisosController(avisosService);
         AvisosRoutes avisosRoutes = new AvisosRoutes(avisosController);
         return avisosRoutes;
     }
+
     public static StatsRoutes initStats() {
-        StatsRepository  statsRepository = new StatsRepository();
+        StatsRepository statsRepository = new StatsRepository();
         StatsService statsService = new StatsService(statsRepository);
-        StatsController  statsController = new StatsController(statsService);
+        StatsController statsController = new StatsController(statsService);
         StatsRoutes statsRoutes = new StatsRoutes(statsController);
         return statsRoutes;
     }
+
     public static SubcategoriaRoutes initSubcategorias() {
         SubcategoriaRepository subcategoriaRepository = new SubcategoriaRepository();
         SubcategoriaService subcategoriaService = new SubcategoriaService(subcategoriaRepository);
@@ -92,4 +98,4 @@ public class AppModule {
         SubcategoriaRoutes subcategoriaRoutes = new SubcategoriaRoutes(subcategoriaController);
         return subcategoriaRoutes;
     }
-
+}
