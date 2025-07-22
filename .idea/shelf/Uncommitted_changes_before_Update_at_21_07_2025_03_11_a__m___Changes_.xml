@@ -1,0 +1,54 @@
+<changelist name="Uncommitted_changes_before_Update_at_21_07_2025_03_11_a_ m__[Changes]" date="1753089126185" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_07_2025_03_11_a_ m__[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 21/07/2025 03:11 a. m. [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/file-system.probe" />
+    <option name="AFTER_PATH" value=".gradle/file-system.probe" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_07_2025_03_11_a_ m__[Changes]/file-system.probe" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/org/EdwarDa2/repository/ComandaRepository.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/org/EdwarDa2/repository/ComandaRepository.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_07_2025_03_11_a_ m__[Changes]/ComandaRepository.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.13/fileHashes/resourceHashesCache.bin" />
+    <option name="AFTER_PATH" value=".gradle/8.13/fileHashes/resourceHashesCache.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_07_2025_03_11_a_ m__[Changes]/resourceHashesCache.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.13/fileHashes/fileHashes.bin" />
+    <option name="AFTER_PATH" value=".gradle/8.13/fileHashes/fileHashes.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_07_2025_03_11_a_ m__[Changes]/fileHashes.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.13/fileHashes/fileHashes.lock" />
+    <option name="AFTER_PATH" value=".gradle/8.13/fileHashes/fileHashes.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_07_2025_03_11_a_ m__[Changes]/fileHashes.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.13/executionHistory/executionHistory.lock" />
+    <option name="AFTER_PATH" value=".gradle/8.13/executionHistory/executionHistory.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_07_2025_03_11_a_ m__[Changes]/executionHistory.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/org/EdwarDa2/model/Comanda.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/org/EdwarDa2/model/Comanda.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_07_2025_03_11_a_ m__[Changes]/Comanda.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.13/executionHistory/executionHistory.bin" />
+    <option name="AFTER_PATH" value=".gradle/8.13/executionHistory/executionHistory.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_07_2025_03_11_a_ m__[Changes]/executionHistory.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/org/EdwarDa2/service/ComandaService.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/org/EdwarDa2/service/ComandaService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_07_2025_03_11_a_ m__[Changes]/ComandaService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="AFTER_PATH" value=".gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_07_2025_03_11_a_ m__[Changes]/buildOutputCleanup.lock" />
+  </binary>
+</changelist>

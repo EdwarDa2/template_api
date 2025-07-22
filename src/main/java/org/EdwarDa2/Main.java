@@ -24,6 +24,5 @@ public class Main {
         AppModule.initAdmins().register(app);
         AppModule.initAvisos().register(app);
         AppModule.initStats().register(app);
-        AppModule.initSubcategorias().register(app);
     }
 }

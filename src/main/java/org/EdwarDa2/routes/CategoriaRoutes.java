@@ -5,12 +5,16 @@ import org.EdwarDa2.controller.CategoriaController;
 
 public class CategoriaRoutes {
     private final CategoriaController categoriaController;
-    public CategoriaRoutes(CategoriaController categoriaController) {this.categoriaController = categoriaController;}
+
+    public CategoriaRoutes(CategoriaController categoriaController) {
+        this.categoriaController = categoriaController;
+    }
+
     public void register(Javalin app) {
-        app.get("/categorias", categoriaController::getAll);
+        app.get("/categorias", categoriaController::getCategorias);
+        app.get("/subcategorias/{categoriaId}", categoriaController::getSubcategorias);
         app.post("/categorias", categoriaController::create);
-        app.get("/categorias/{id_categoria}", categoriaController::getById);
-        app.put("/categorias/{id}", categoriaController::update);
-        app.delete("/categorias/{id}", categoriaController::delete);
+        app.put("/categorias/{id_categoria}", categoriaController::update);
+        app.delete("/categorias/{id_categoria}", categoriaController::delete);
     }
 }

@@ -75,10 +75,11 @@ public class ProductoRepository {
         }
     }
     public void delete(int id_producto) throws SQLException {
-        String query = "DELETE FROM productos WHERE id_producto = ?";
+        String sql = "DELETE FROM productos WHERE id_producto = ?";
 
         try (Connection conn = DatabaseConfig.getDataSource().getConnection();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
             stmt.setInt(1, id_producto);
             stmt.executeUpdate();
         }

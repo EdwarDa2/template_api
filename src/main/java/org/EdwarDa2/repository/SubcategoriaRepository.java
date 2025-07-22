@@ -1,85 +1,98 @@
 package org.EdwarDa2.repository;
+
 import org.EdwarDa2.config.DatabaseConfig;
 import org.EdwarDa2.model.Subcategoria;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+
 public class SubcategoriaRepository {
 
-
     public List<Subcategoria> findAll() throws SQLException {
-        List<Subcategoria> subcategorias = new ArrayList<>();
-        String query = "SELECT * FROM subcategorias";
-        try (
-                Connection conn = DatabaseConfig.getDataSource().getConnection();
-                PreparedStatement stmt = conn.prepareStatement(query);
-                ResultSet rs = stmt.executeQuery()) {
+        List<Subcategoria> lista = new ArrayList<>();
+        String sql = "SELECT * FROM subcategorias";
+
+        try (Connection conn = DatabaseConfig.getDataSource().getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
             while (rs.next()) {
-                Subcategoria c = new Subcategoria();
-                c.setId_subcategoria(rs.getInt("id_subcategoria"));
-                c.setId_categoria(rs.getInt("id_categoria"));
-                c.setNombre_subcategoria(rs.getString("nombre_subcategoria"));
-                subcategorias.add(c);
+                lista.add(new Subcategoria(
+                        rs.getInt("id_subcategoria"),
+                        rs.getString("nombre_subcategoria"),
+                        rs.getInt("id_categoria")
+                ));
             }
         }
-        return subcategorias;
+        return lista;
     }
 
-    public Subcategoria findById_subcategoria(int id_subcategoria) throws SQLException {
-        Subcategoria subcategoria = null;
-        String query = "SELECT * FROM subcategorias WHERE id_subcategoria = ?";
-
+    public Subcategoria findById(int id) throws SQLException {
+        String sql = "SELECT * FROM subcategorias WHERE id_subcategoria = ?";
         try (Connection conn = DatabaseConfig.getDataSource().getConnection();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
 
-            stmt.setInt(1, id_subcategoria);
-
-            try (ResultSet rs = stmt.executeQuery()) {
-                if (rs.next()) {
-                    subcategoria = new Subcategoria();
-                    subcategoria.setId_subcategoria(rs.getInt("id_subcategoria"));
-                    subcategoria.setId_categoria(rs.getInt("id_categoria"));
-                    subcategoria.setNombre_subcategoria(rs.getString("nombre_subCategoria"));
-                }
+            if (rs.next()) {
+                return new Subcategoria(
+                        rs.getInt("id_subcategoria"),
+                        rs.getString("nombre_subcategoria"),
+                        rs.getInt("id_categoria")
+                );
             }
         }
-
-        return subcategoria;
+        return null;
     }
 
-    public void save(Subcategoria subcategoria) throws SQLException {
-        String query = "INSERT INTO subcategorias (id_categoria,nombre_subcategoria) VALUES (?,?)";
-        try (Connection conn = DatabaseConfig.getDataSource().getConnection();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
-            stmt.setInt(1, subcategoria.getId_categoria());
-            stmt.setString(2,subcategoria.getNombre_subcategoria());
-            stmt.executeUpdate();
+    public List<Subcategoria> findByCategoria(int id_categoria) throws SQLException {
+        List<Subcategoria> lista = new ArrayList<>();
+        String sql = "SELECT * FROM subcategorias WHERE id_categoria = ?";
 
+        try (Connection conn = DatabaseConfig.getDataSource().getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, id_categoria);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                lista.add(new Subcategoria(
+                        rs.getInt("id_subcategoria"),
+                        rs.getString("nombre_subcategoria"),
+                        rs.getInt("id_categoria")
+                ));
+            }
         }
-    }
-    public void update(Subcategoria subcategoria) throws SQLException {
-        String query = "UPDATE subcategorias  SET  id_categoria = ?, nombre_subcategoria = ? WHERE id_subcategoria  = ?";
-        try (Connection conn = DatabaseConfig.getDataSource().getConnection();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
-            stmt.setInt(1, subcategoria.getId_categoria());
-            stmt.setString(2, subcategoria.getNombre_subcategoria());
-            stmt.setInt(3, subcategoria.getId_subcategoria());
-            stmt.executeUpdate();
-        }
+        return lista;
     }
 
-    public void delete(int id_subcategoria) throws SQLException {
-        String query = "DELETE FROM subcategorias WHERE id_subcategoria = ?";
-
+    public void save(Subcategoria sub) throws SQLException {
+        String sql = "INSERT INTO subcategorias (nombre_subcategoria, id_categoria) VALUES (?, ?)";
         try (Connection conn = DatabaseConfig.getDataSource().getConnection();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
-            stmt.setInt(1, id_subcategoria);
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, sub.getNombre_subcategoria());
+            stmt.setInt(2, sub.getId_categoria());
             stmt.executeUpdate();
         }
     }
 
+    public void update(Subcategoria sub) throws SQLException {
+        String sql = "UPDATE subcategorias SET nombre_subcategoria = ?, id_categoria = ? WHERE id_subcategoria = ?";
+        try (Connection conn = DatabaseConfig.getDataSource().getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, sub.getNombre_subcategoria());
+            stmt.setInt(2, sub.getId_categoria());
+            stmt.setInt(3, sub.getId_subcategoria());
+            stmt.executeUpdate();
+        }
+    }
+
+    public void delete(int id) throws SQLException {
+        String sql = "DELETE FROM subcategorias WHERE id_subcategoria = ?";
+        try (Connection conn = DatabaseConfig.getDataSource().getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+        }
+    }
 }

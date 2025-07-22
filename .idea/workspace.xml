@@ -5,10 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd6834a3-c561-46d6-8a22-4a228e1bbaea" name="Changes" comment="AVISOSNEW">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/ISubcategoriaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/SubcategoriaServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/model/Categoria.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/model/Categoria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/model/Comanda.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/model/Comanda.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/model/Producto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/model/Producto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/repository/CategoriaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/repository/CategoriaRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/repository/ComandaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/repository/ComandaRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/repository/ProductoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/repository/ProductoRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/service/ComandaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/service/ComandaService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.env" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/DTO/comandas/ComandaRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/DTO/comandas/ComandaRequestDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/controller/SubcategoriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/controller/SubcategoriaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/controller/CategoriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/controller/CategoriaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/di/AppModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/di/AppModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Categoria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Comanda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Comanda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Subcategoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Subcategoria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/CategoriaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/CategoriaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/ComandaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/ComandaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/ProductoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/ProductoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/SubcategoriaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/SubcategoriaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/routes/CategoriaRoutes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/routes/CategoriaRoutes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/routes/ProductoRoutes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/routes/ProductoRoutes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/routes/SubcategoriaRoutes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/routes/SubcategoriaRoutes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/CategoriaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/CategoriaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/ComandaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/ComandaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/ProductoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/ProductoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/SubcategoriaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/service/SubcategoriaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/.env" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/.env" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,12 +106,12 @@
     &quot;assignee&quot;: &quot;cesar160&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/EdwarDa2/template_api.git",
-    "accountId": "7df0fcea-679c-4b77-a0a1-384decead587"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/EdwarDa2/template_api.git&quot;,
+    &quot;accountId&quot;: &quot;50fae2b5-e5b8-46f6-a72e-f84abe01c132&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -86,25 +120,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Download Sources.executor": "Run",
-    "Gradle.template_api [:org.EdwarDa2.Main.main()].executor": "Run",
-    "Gradle.template_api [:org.alilopez.Main.main()].executor": "Run",
-    "Gradle.template_api [shadowJar].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.template_api [:org.EdwarDa2.Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.template_api [:org.alilopez.Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.template_api [shadowJar].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.EdwarDa2.DTO.comandas" />
@@ -234,7 +267,8 @@
       <workItem from="1753043324995" duration="89000" />
       <workItem from="1753043535142" duration="9029000" />
       <workItem from="1753071409635" duration="1990000" />
-      <workItem from="1753079357586" duration="6580000" />
+      <workItem from="1753118203257" duration="5925000" />
+      <workItem from="1753146901443" duration="6068000" />
     </task>
     <task id="LOCAL-00001" summary="AVISOSNEW">
       <option name="closed" value="true" />

@@ -2,14 +2,13 @@ package org.EdwarDa2.model;
 
 import java.time.LocalDateTime;
 
-
-
 public class Comanda {
     private int id_comanda;
     private int id_mesa;
     private int id_mesero;
     private LocalDateTime fecha_hora;
-    private int id_detalleComanda;
+
+    public Comanda() {}
 
     public int getId_comanda() {
         return id_comanda;
@@ -41,13 +40,5 @@ public class Comanda {
 
     public void setFecha_hora(LocalDateTime fecha_hora) {
         this.fecha_hora = fecha_hora;
-    }
-
-    public int getId_detalleComanda() {
-        return id_detalleComanda;
-    }
-
-    public void setId_detalleComanda(int id_detalleComanda) {
-        this.id_detalleComanda = id_detalleComanda;
     }
 }

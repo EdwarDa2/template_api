@@ -4,6 +4,7 @@ import org.EdwarDa2.DTO.comandas.ComandaRequestDTO;
 import org.EdwarDa2.model.Comanda;
 import org.EdwarDa2.repository.ComandaRepository;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.List;
 public class ComandaService {
         private final ComandaRepository comandaRepo;
@@ -20,14 +21,13 @@ public class ComandaService {
 
         public void createComanda(ComandaRequestDTO comanda) throws SQLException {
             comandaRepo.save(comanda);
+            comanda.setFecha_hora(LocalDateTime.now());
         }
         public void deleteComanda(int id_comanda) throws SQLException {
             comandaRepo.delete(id_comanda);
         }
 
-
-
-    }
+}
 
 
 

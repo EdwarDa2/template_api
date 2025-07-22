@@ -2,6 +2,7 @@ package org.EdwarDa2.controller;
 import io.javalin.http.Context;
 import io.javalin.http.HttpStatus;
 import org.EdwarDa2.model.Categoria;
+import org.EdwarDa2.model.Subcategoria;
 import org.EdwarDa2.service.CategoriaService;
 import java.sql.SQLException;
 import java.util.List;
@@ -14,28 +15,24 @@ public class CategoriaController {
             this.categoriaService = categoriaService;
         }
 
-        public void getAll(Context ctx) {
+    public void getCategorias(Context ctx) {
             try {
-                List<Categoria> categorias = categoriaService.getAllCategoria();
+                List<Categoria> categorias = categoriaService.getCategorias();
                 ctx.json(categorias);
-            } catch (SQLException e) {
-                ctx.status(500).result("Error al obtener Categorias");
-            }
-        }
-
-        public void getById(Context ctx) {
-            try {
-                int id = Integer.parseInt(ctx.pathParam("id_categoria"));
-                Categoria categoria = categoriaService.getById_categoria(id);
-                if (categoria != null) {
-                    ctx.json(categoria);
-                } else {
-                    ctx.status(HttpStatus.NOT_FOUND).result("categoria no encontrada");
-                }
             } catch (Exception e) {
-                ctx.status(404).result("Error al obtener Categorias");
+                ctx.status(404).result("Error al obtener los categorias"+e.getMessage());
             }
-        }
+    }
+
+    public void getSubcategorias(Context ctx) {
+            try {
+                int categoriaId = Integer.parseInt(ctx.pathParam("categoriaId"));
+                List<Subcategoria> subcategorias = categoriaService.getSubcategorias(categoriaId);
+                ctx.json(subcategorias);
+            } catch (Exception e) {
+                ctx.status(404).result("Error al obtener los categorias"+e.getMessage());
+            }
+    }
 
         public void create(Context ctx) {
             try {

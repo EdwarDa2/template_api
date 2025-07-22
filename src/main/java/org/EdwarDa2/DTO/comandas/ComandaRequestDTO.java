@@ -12,6 +12,9 @@ public class ComandaRequestDTO {
     private LocalDateTime fecha_hora;
     private ArrayList<DetalleComandaDTO> listaProductos;
 
+    public ComandaRequestDTO() {
+    }
+
     public ComandaRequestDTO(int id_comanda, int id_mesa, int id_mesero, LocalDateTime fecha_hora, ArrayList<DetalleComandaDTO> listaProductos) {
         this.id_comanda = id_comanda;
         this.id_mesa = id_mesa;

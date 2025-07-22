@@ -4,6 +4,7 @@ import org.EdwarDa2.DTO.comandas.DetalleComandaDTO;
 import org.EdwarDa2.config.DatabaseConfig;
 import org.EdwarDa2.model.Comanda;
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -105,9 +106,9 @@ public class ComandaRepository {
             try (PreparedStatement stmt = conn.prepareStatement(insertComanda, Statement.RETURN_GENERATED_KEYS)) {
                 stmt.setInt(1, comanda.getId_mesa());
                 stmt.setInt(2, comanda.getId_mesero());
-                stmt.setTimestamp(3, Timestamp.valueOf(comanda.getFecha_hora()));
+                LocalDateTime fecha = comanda.getFecha_hora() != null ? comanda.getFecha_hora() : LocalDateTime.now();
+                stmt.setTimestamp(3, Timestamp.valueOf(fecha));
                 stmt.executeUpdate();
-
                 ResultSet rs = stmt.getGeneratedKeys();
                 if (rs.next()) {
                     idGenerado = rs.getInt(1);
@@ -141,7 +142,7 @@ public class ComandaRepository {
                 stmt.executeUpdate();
             }
         }
-    }
+}
 
 
 

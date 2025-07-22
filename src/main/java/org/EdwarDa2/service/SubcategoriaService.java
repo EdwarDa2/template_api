@@ -3,6 +3,8 @@ package org.EdwarDa2.service;
 import org.EdwarDa2.model.Subcategoria;
 import org.EdwarDa2.repository.SubcategoriaRepository;
 
+
+
 import java.sql.SQLException;
 import java.util.List;
 
@@ -17,7 +19,7 @@ public class SubcategoriaService {
     }
 
     public Subcategoria getById_subcategoria(int id_subcategoria) throws SQLException {
-        return subcategoriaRepo.findById_subcategoria(id_subcategoria);
+        return subcategoriaRepo.findById(id_subcategoria);
     }
 
     public void createSubcategoria(Subcategoria subcategoria) throws SQLException {

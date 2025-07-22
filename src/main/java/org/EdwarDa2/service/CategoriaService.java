@@ -1,6 +1,7 @@
 package org.EdwarDa2.service;
 
 import org.EdwarDa2.model.Categoria;
+import org.EdwarDa2.model.Subcategoria;
 import org.EdwarDa2.repository.CategoriaRepository;
 
 import java.sql.SQLException;
@@ -11,12 +12,12 @@ public class CategoriaService {
         this.categoriaRepo = categoriaRepo;
     }
 
-    public List<Categoria> getAllCategoria() throws SQLException {
-        return categoriaRepo.findAll();
+    public List<Categoria> getCategorias() {
+        return categoriaRepo.getAllCategorias();
     }
 
-    public Categoria getById_categoria(int id_categoria) throws SQLException {
-        return categoriaRepo.findById_categoria(id_categoria);
+    public List<Subcategoria> getSubcategorias(int categoriaId) {
+        return categoriaRepo.getSubcategoriasByCategoria(categoriaId);
     }
 
     public void createCategoria(Categoria categoria) throws SQLException {
