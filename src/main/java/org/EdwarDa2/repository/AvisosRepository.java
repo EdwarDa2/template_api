@@ -22,7 +22,7 @@ public class AvisosRepository {
             while (rs.next()) {
                 Aviso a = new Aviso();
                 a.setId_aviso(rs.getInt("id_aviso"));
-                a.setId_usuario(rs.getInt("id_usuario"));
+                a.setId_admin(rs.getInt("id_admin"));
                 a.setFecha(rs.getTimestamp("fecha").toLocalDateTime()); // CAMBIO
                 a.setContenido(rs.getString("contenido"));
                 avisos.add(a);
@@ -34,7 +34,7 @@ public class AvisosRepository {
 
     public Aviso findById_aviso(int id_aviso) throws SQLException {
         Aviso aviso = null;
-        String query = "SELECT * FROM avisos WHERE id_aviso = ?";
+        String query = "SELECT * FROM avisos WHERE id_admin = ?";
 
         try (
                 Connection conn = DatabaseConfig.getDataSource().getConnection();
@@ -46,7 +46,7 @@ public class AvisosRepository {
                 if (rs.next()) {
                     aviso = new Aviso();
                     aviso.setId_aviso(rs.getInt("id_aviso"));
-                    aviso.setId_usuario(rs.getInt("id_usuario"));
+                    aviso.setId_admin(rs.getInt("id_usuario"));
                     aviso.setFecha(rs.getTimestamp("fecha").toLocalDateTime()); // CAMBIO
                     aviso.setContenido(rs.getString("contenido"));
                 }
@@ -58,13 +58,13 @@ public class AvisosRepository {
 
     public int insert(Aviso aviso) throws SQLException {
         int idGenerado = -1;
-        String query = "INSERT INTO avisos (id_usuario, fecha, contenido) VALUES (?, NOW(), ?)"; // fecha automática
+        String query = "INSERT INTO avisos (id_admin, fecha, contenido) VALUES (?, NOW(), ?)"; // fecha automática
 
         try (
                 Connection conn = DatabaseConfig.getDataSource().getConnection();
                 PreparedStatement stmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)
         ) {
-            stmt.setInt(1, aviso.getId_usuario());
+            stmt.setInt(1, aviso.getId_admin());
             stmt.setString(2, aviso.getContenido());
             stmt.executeUpdate();
 
@@ -78,13 +78,13 @@ public class AvisosRepository {
     }
 
     public void update(Aviso aviso) throws SQLException {
-        String query = "UPDATE avisos SET id_usuario = ?, fecha = ?, contenido = ? WHERE id_aviso = ?";
+        String query = "UPDATE avisos SET id_admin = ?, fecha = ?, contenido = ? WHERE id_aviso = ?";
 
         try (
                 Connection conn = DatabaseConfig.getDataSource().getConnection();
                 PreparedStatement stmt = conn.prepareStatement(query)
         ) {
-            stmt.setInt(1, aviso.getId_usuario());
+            stmt.setInt(1, aviso.getId_admin());
             stmt.setTimestamp(2, Timestamp.valueOf(aviso.getFecha())); // CAMBIO
             stmt.setString(3, aviso.getContenido());
             stmt.setInt(4, aviso.getId_aviso());

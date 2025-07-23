@@ -3,7 +3,7 @@ import java.time.LocalDateTime;
 
 public class Aviso {
     private int id_aviso;
-    private int id_usuario;
+    private int id_admin;
     private LocalDateTime fecha;
     private String contenido;
 
@@ -17,12 +17,12 @@ public class Aviso {
         this.id_aviso = id_aviso;
     }
 
-    public int getId_usuario() {
-        return id_usuario;
+    public int getId_admin() {
+        return id_admin;
     }
 
-    public void setId_usuario(int id_usuario) {
-        this.id_usuario = id_usuario;
+    public void setId_admin(int id_admin) {
+        this.id_admin = id_admin;
     }
 
     public LocalDateTime getFecha() {
