@@ -19,7 +19,7 @@ public class SubcategoriaController {
             List<Subcategoria> subcategorias = subcategoriaService.getAllSubcategoria();
             ctx.json(subcategorias);
         } catch (SQLException e) {
-            ctx.status(500).result("Error al obtener Subcategorias");
+            ctx.status(500).result("Error al obtener Subcategorias" +e.getMessage());
         }
     }
 

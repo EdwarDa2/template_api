@@ -93,9 +93,11 @@ public class AppModule {
         public static ProductoRoutes initProductos() {
             ProductoRepository productoRepository = new ProductoRepository();
             ProductoService productoService = new ProductoService(productoRepository);
-            ProductoController productoController = new ProductoController(productoService);
+            CategoriaService categoriaService = new CategoriaService(new CategoriaRepository());
+            SubcategoriaService subcategoriaService = new SubcategoriaService(new SubcategoriaRepository());
+            ProductoController productoController = new ProductoController(productoService, categoriaService, subcategoriaService);
             ProductoRoutes productoRoutes = new ProductoRoutes(productoController);
             return productoRoutes;
-        }
     }
+}
 

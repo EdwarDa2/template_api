@@ -29,21 +29,19 @@ public class SubcategoriaRepository {
     }
 
     public Subcategoria findById(int id) throws SQLException {
-        String sql = "SELECT * FROM subcategorias WHERE id_subcategoria = ?";
+        String query = "SELECT * FROM subcategorias WHERE id_subcategoria = ?";
+        Subcategoria subcategoria = null;
         try (Connection conn = DatabaseConfig.getDataSource().getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+             PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
-
             if (rs.next()) {
-                return new Subcategoria(
-                        rs.getInt("id_subcategoria"),
-                        rs.getString("nombre_subcategoria"),
-                        rs.getInt("id_categoria")
-                );
+                subcategoria = new Subcategoria();
+                subcategoria.setId_subcategoria(rs.getInt("id_subcategoria"));
+                subcategoria.setNombre_subcategoria(rs.getString("nombre_subcategoria"));
             }
         }
-        return null;
+        return subcategoria;
     }
 
     public List<Subcategoria> findByCategoria(int id_categoria) throws SQLException {

@@ -33,5 +33,8 @@ public class SubcategoriaService {
     public void deleteSubcategoria(int id_subcategoria) throws SQLException {
         subcategoriaRepo.delete(id_subcategoria);
     }
+    public Subcategoria fetchSubcategoriaById(int id) throws SQLException {
+        return subcategoriaRepo.findById(id);
+    }
 
 }

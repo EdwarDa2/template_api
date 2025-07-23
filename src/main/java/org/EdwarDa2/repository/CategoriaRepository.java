@@ -80,6 +80,22 @@ public class CategoriaRepository {
                 stmt.executeUpdate();
             }
         }
+    public Categoria findById(int id) throws SQLException {
+        String query = "SELECT * FROM categorias WHERE id_categoria = ?";
+        Categoria categoria = null;
+        try (Connection conn = DatabaseConfig.getDataSource().getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                categoria = new Categoria();
+                categoria.setId_categoria(rs.getInt("id_categoria"));
+                categoria.setNombre_categoria(rs.getString("nombre_categoria"));
+            }
+        }
+        return categoria;
+    }
+
 
 
 

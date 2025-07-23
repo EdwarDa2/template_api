@@ -22,7 +22,7 @@ public class ProductoRepository {
                 p.setId_producto(rs.getInt("id_producto"));
                 p.setNombre(rs.getString("nombre"));
                 p.setPrecio(rs.getFloat("precio"));
-                p.setId_subCategoria(rs.getInt("id_subCategoria"));
+                p.setSubcategoriaId(rs.getInt("subcategoriaid"));
                 productos.add(p);
             }
         }
@@ -44,7 +44,7 @@ public class ProductoRepository {
                     producto.setId_producto(rs.getInt("id_producto"));
                     producto.setNombre(rs.getString("nombre"));
                     producto.setPrecio(rs.getFloat("precio"));
-                    producto.setId_subCategoria(rs.getInt("id_subcategoria"));
+                    producto.setSubcategoriaId(rs.getInt("id_subcategoria"));
                     productos.add(producto);
                 }
             }
@@ -60,7 +60,7 @@ public class ProductoRepository {
              PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.setString(1, producto.getNombre());
             stmt.setFloat(2, producto.getPrecio());
-            stmt.setInt(3, producto.getId_subCategoria());
+            stmt.setInt(3, producto.getSubcategoriaId());
             stmt.executeUpdate();
 
         }
@@ -71,7 +71,7 @@ public class ProductoRepository {
              PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.setString(1, producto.getNombre());
             stmt.setFloat(2, producto.getPrecio());
-            stmt.setInt(3, producto.getId_subCategoria());
+            stmt.setInt(3, producto.getSubcategoriaId());
             stmt.setInt(4, producto.getId_producto());
             stmt.executeUpdate();
         }
@@ -92,7 +92,7 @@ public class ProductoRepository {
         try (Connection conn = DatabaseConfig.getDataSource().getConnection();
              PreparedStatement stmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
 
-            stmt.setInt(1, producto.getId_subCategoria());
+            stmt.setInt(1, producto.getSubcategoriaId());
             stmt.setString(2, producto.getNombre());
             stmt.setDouble(3, producto.getPrecio());
 

@@ -3,6 +3,9 @@ public class Categoria {
     private int id_categoria;
     private String nombre_categoria;
 
+    public Categoria() {
+    }
+
     public int getId_categoria() {
         return id_categoria;
     }

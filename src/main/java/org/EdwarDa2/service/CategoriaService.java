@@ -31,5 +31,8 @@ public class CategoriaService {
     public void deleteCategoria(int id_categoria) throws SQLException {
         categoriaRepo.delete(id_categoria);
     }
+    public Categoria fetchCategoriaById(int id) throws SQLException {
+        return categoriaRepo.findById(id);  // Llama al repositorio para obtener la categoría
+    }
 
 }
