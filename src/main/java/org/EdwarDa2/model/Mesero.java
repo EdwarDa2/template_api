@@ -5,6 +5,14 @@ public class Mesero {
     private int id_usuario;
     private String clave;
 
+    public Mesero() {
+    }
+
+    public Mesero(int id_usuario, String clave) {
+        this.id_usuario = id_usuario;
+        this.clave = clave;
+    }
+
     public int getId_mesero() {
         return id_mesero;
     }

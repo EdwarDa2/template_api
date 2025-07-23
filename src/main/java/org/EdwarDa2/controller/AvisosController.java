@@ -34,7 +34,7 @@ public class AvisosController {
     public void create(Context ctx) throws SQLException {
         AvisoRequestDTO dto = ctx.bodyAsClass(AvisoRequestDTO.class);
         Aviso aviso = new Aviso();
-        aviso.setId_usuario(dto.id_usuario);
+        aviso.setId_admin(dto.id_admin);
         aviso.setContenido(dto.contenido);
         aviso.setFecha(LocalDateTime.now());
 
