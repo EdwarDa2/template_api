@@ -2,6 +2,7 @@ package org.EdwarDa2.controller;
 
 import io.javalin.http.Context;
 import io.javalin.http.HttpStatus;
+import org.EdwarDa2.DTO.MeseroDTO;
 import org.EdwarDa2.model.Mesero;
 import org.EdwarDa2.service.MeseroService;
 
@@ -40,8 +41,8 @@ public class MeseroController {
 
     public void create(Context ctx) {
         try {
-            Mesero mesero = ctx.bodyAsClass(Mesero.class);
-            meseroService.createMesero(mesero);
+            MeseroDTO dto = ctx.bodyAsClass(MeseroDTO.class);
+            meseroService.createMesero(dto);
             ctx.status(201).result("Mesero creado");
         } catch (Exception e) {
             e.printStackTrace();

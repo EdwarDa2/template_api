@@ -1,13 +1,13 @@
 package org.EdwarDa2.DTO;
 
-public class MeseroDTO {
+public class AdminDTO {
     private String nombre;
     private String apellido_p;
     private String apellido_m;
     private Integer rol;
     private String clave;
 
-    public MeseroDTO() {}
+    public AdminDTO() {}
 
 
     public String getNombre() {

@@ -20,9 +20,9 @@ public class UserService {
     }
 
     public void createUser(User user) throws SQLException {
-        String hashedContrasena = BCrypt.withDefaults().hashToString(12, user.getContrasena().toCharArray());
-        user.setContrasena(hashedContrasena);
-        userRepo.save(user);
+        //String hashedContrasena = BCrypt.withDefaults().hashToString(12, user.getClave().toCharArray());
+        //user.setClave(hashedContrasena);
+        //userRepo.save(user);
     }
 
     public void updateUser(User user) throws SQLException {
