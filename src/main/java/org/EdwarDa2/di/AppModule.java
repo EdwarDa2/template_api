@@ -68,8 +68,9 @@ public class AppModule {
     }
 
     public static AdminRoutes initAdmins() {
+        UserRepository userRepository = new UserRepository();
         AdminRepository adminRepository = new AdminRepository();
-        AdminService adminService = new AdminService(adminRepository);
+        AdminService adminService = new AdminService(userRepository, adminRepository);
         AdminController adminController = new AdminController(adminService);
         AdminRoutes adminRoutes = new AdminRoutes(adminController);
         return adminRoutes;
@@ -91,11 +92,11 @@ public class AppModule {
         return statsRoutes;
     }
 
-    public static SubcategoriaRoutes initSubcategorias() {
-        SubcategoriaRepository subcategoriaRepository = new SubcategoriaRepository();
-        SubcategoriaService subcategoriaService = new SubcategoriaService(subcategoriaRepository);
-        SubcategoriaController subcategoriaController = new SubcategoriaController(subcategoriaService);
-        SubcategoriaRoutes subcategoriaRoutes = new SubcategoriaRoutes(subcategoriaController);
-        return subcategoriaRoutes;
-    }
+    //public static SubcategoriaRoutes initSubcategorias() {
+        //SubcategoriaRepository subcategoriaRepository = new SubcategoriaRepository();
+        //SubcategoriaService subcategoriaService = new SubcategoriaService(subcategoriaRepository);
+        //SubcategoriaController subcategoriaController = new SubcategoriaController(subcategoriaService);
+        //SubcategoriaRoutes subcategoriaRoutes = new SubcategoriaRoutes(subcategoriaController);
+        //return subcategoriaRoutes;
+    //}
 }
