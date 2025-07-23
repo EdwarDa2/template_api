@@ -1,0 +1,176 @@
+Index: src/main/resources/.env
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Configuración de Base de Datos MySQL\r\nDB_HOST=localhost\r\nDB_SCHEMA=db_restapp\r\nDB_USER=root\r\nDB_PASS=cesaryair\r\nAPP_ENV=development\r\n# Configuración del Servidor\r\nSERVER_PORT=7000
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/.env b/src/main/resources/.env
+--- a/src/main/resources/.env	(revision a00b93a54b3d28fec18b89ef5faee55ed1ec7963)
++++ b/src/main/resources/.env	(date 1753235730099)
+@@ -1,6 +1,6 @@
+ # Configuración de Base de Datos MySQL
+ DB_HOST=localhost
+-DB_SCHEMA=db_restapp
++DB_SCHEMA=restapp_
+ DB_USER=root
+ DB_PASS=cesaryair
+ APP_ENV=development
+Index: build/resources/main/.env
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Configuración de Base de Datos MySQL\r\nDB_HOST=localhost\r\nDB_SCHEMA=db_restapp\r\nDB_USER=root\r\nDB_PASS=cesaryair\r\nAPP_ENV=development\r\n# Configuración del Servidor\r\nSERVER_PORT=7000
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build/resources/main/.env b/build/resources/main/.env
+--- a/build/resources/main/.env	(revision a00b93a54b3d28fec18b89ef5faee55ed1ec7963)
++++ b/build/resources/main/.env	(date 1753235731034)
+@@ -1,6 +1,6 @@
+ # Configuración de Base de Datos MySQL
+ DB_HOST=localhost
+-DB_SCHEMA=db_restapp
++DB_SCHEMA=restapp_
+ DB_USER=root
+ DB_PASS=cesaryair
+ APP_ENV=development
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"fd6834a3-c561-46d6-8a22-4a228e1bbaea\" name=\"Changes\" comment=\"AVISOSNEW\">\r\n      <change beforePath=\"$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.lock\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.lock\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.gradle/8.13/fileHashes/resourceHashesCache.bin\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/8.13/fileHashes/resourceHashesCache.bin\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.gradle/file-system.probe\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gradle/file-system.probe\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/model/Mesa.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/model/Mesa.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/repository/MesasRepository.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/repository/MesasRepository.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/repository/ProductoRepository.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/repository/ProductoRepository.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/build/resources/main/.env\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/build/resources/main/.env\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/EdwarDa2/DTO/comandas/AvisoRequestDTO.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/EdwarDa2/DTO/comandas/AvisoRequestDTO.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/EdwarDa2/controller/AvisosController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/EdwarDa2/controller/AvisosController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Aviso.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Aviso.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Mesa.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Mesa.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/AvisosRepository.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/AvisosRepository.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/MesasRepository.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/MesasRepository.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/.env\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/.env\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ExternalProjectsData\">\r\n    <projectState path=\"$PROJECT_DIR$\">\r\n      <ProjectState />\r\n    </projectState>\r\n  </component>\r\n  <component name=\"ExternalProjectsManager\">\r\n    <system id=\"GRADLE\">\r\n      <state>\r\n        <task path=\"$PROJECT_DIR$\">\r\n          <activation />\r\n        </task>\r\n        <projects_view>\r\n          <tree_state>\r\n            <expand>\r\n              <path>\r\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\r\n                <item name=\"template_api\" type=\"f1a62948:ProjectNode\" />\r\n              </path>\r\n              <path>\r\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\r\n                <item name=\"template_api\" type=\"f1a62948:ProjectNode\" />\r\n                <item name=\"Tasks\" type=\"e4a08cd1:TasksNode\" />\r\n              </path>\r\n              <path>\r\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\r\n                <item name=\"template_api\" type=\"f1a62948:ProjectNode\" />\r\n                <item name=\"Tasks\" type=\"e4a08cd1:TasksNode\" />\r\n                <item name=\"shadow\" type=\"c8890929:TasksNode$1\" />\r\n              </path>\r\n              <path>\r\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\r\n                <item name=\"template_api\" type=\"f1a62948:ProjectNode\" />\r\n                <item name=\"Dependencies\" type=\"6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode\" />\r\n              </path>\r\n            </expand>\r\n            <select />\r\n          </tree_state>\r\n        </projects_view>\r\n      </state>\r\n    </system>\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;cesar160&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/EdwarDa2/template_api.git&quot;,\r\n    &quot;accountId&quot;: &quot;50fae2b5-e5b8-46f6-a72e-f84abe01c132&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 3\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2z3b49ju6PgLhqXCxFDXgCcKiou\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Gradle.Download Sources.executor\": \"Run\",\r\n    \"Gradle.template_api [:org.EdwarDa2.Main.main()].executor\": \"Run\",\r\n    \"Gradle.template_api [:org.alilopez.Main.main()].executor\": \"Run\",\r\n    \"Gradle.template_api [shadowJar].executor\": \"Run\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"last_opened_file_path\": \"C:/Users/cesarr/IdeaProjects/template_api\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"settings.editor.selected.configurable\": \"editor.preferences.fonts.default\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\r\n      <recent name=\"org.EdwarDa2.DTO.comandas\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.Main\">\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.EdwarDa2.Main\" />\r\n      <module name=\"template_api.main\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"org.EdwarDa2.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"template_api [shadowJar]\" type=\"GradleRunConfiguration\" factoryName=\"Gradle\" temporary=\"true\">\r\n      <ExternalSystemSettings>\r\n        <option name=\"executionName\" />\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"externalSystemIdString\" value=\"GRADLE\" />\r\n        <option name=\"scriptParameters\" />\r\n        <option name=\"taskDescriptions\">\r\n          <list />\r\n        </option>\r\n        <option name=\"taskNames\">\r\n          <list>\r\n            <option value=\"shadowJar\" />\r\n          </list>\r\n        </option>\r\n        <option name=\"vmOptions\" />\r\n      </ExternalSystemSettings>\r\n      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>\r\n      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>\r\n      <DebugAllEnabled>false</DebugAllEnabled>\r\n      <RunAsTest>false</RunAsTest>\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Gradle.template_api [shadowJar]\" />\r\n        <item itemvalue=\"Application.Main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"fd6834a3-c561-46d6-8a22-4a228e1bbaea\" name=\"Changes\" comment=\"\" />\r\n      <created>1750962510220</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1750962510220</updated>\r\n      <workItem from=\"1750962511423\" duration=\"4309000\" />\r\n      <workItem from=\"1750981954444\" duration=\"158000\" />\r\n      <workItem from=\"1750995013586\" duration=\"810000\" />\r\n      <workItem from=\"1751033860946\" duration=\"317000\" />\r\n      <workItem from=\"1751041614516\" duration=\"29000\" />\r\n      <workItem from=\"1751043728628\" duration=\"3688000\" />\r\n      <workItem from=\"1751340991649\" duration=\"342000\" />\r\n      <workItem from=\"1751343582804\" duration=\"824000\" />\r\n      <workItem from=\"1751380623857\" duration=\"3193000\" />\r\n      <workItem from=\"1751387908270\" duration=\"10000\" />\r\n      <workItem from=\"1751391989945\" duration=\"331000\" />\r\n      <workItem from=\"1751396993166\" duration=\"1782000\" />\r\n      <workItem from=\"1751411111660\" duration=\"5706000\" />\r\n      <workItem from=\"1751469587879\" duration=\"1304000\" />\r\n      <workItem from=\"1751473671802\" duration=\"505000\" />\r\n      <workItem from=\"1751476693388\" duration=\"1180000\" />\r\n      <workItem from=\"1751487755172\" duration=\"11042000\" />\r\n      <workItem from=\"1751516036481\" duration=\"3717000\" />\r\n      <workItem from=\"1751603589888\" duration=\"12553000\" />\r\n      <workItem from=\"1751644745947\" duration=\"1547000\" />\r\n      <workItem from=\"1751651449303\" duration=\"941000\" />\r\n      <workItem from=\"1751653926566\" duration=\"226000\" />\r\n      <workItem from=\"1751654167592\" duration=\"31000\" />\r\n      <workItem from=\"1751654236328\" duration=\"32000\" />\r\n      <workItem from=\"1751691223199\" duration=\"5838000\" />\r\n      <workItem from=\"1751767167929\" duration=\"2000\" />\r\n      <workItem from=\"1751769387501\" duration=\"9583000\" />\r\n      <workItem from=\"1751837622931\" duration=\"6224000\" />\r\n      <workItem from=\"1751855920340\" duration=\"6839000\" />\r\n      <workItem from=\"1751932629287\" duration=\"6648000\" />\r\n      <workItem from=\"1751940350795\" duration=\"101000\" />\r\n      <workItem from=\"1751985652605\" duration=\"1743000\" />\r\n      <workItem from=\"1752005283933\" duration=\"62000\" />\r\n      <workItem from=\"1752008191518\" duration=\"36000\" />\r\n      <workItem from=\"1752022468718\" duration=\"5287000\" />\r\n      <workItem from=\"1752029616451\" duration=\"2576000\" />\r\n      <workItem from=\"1752071088495\" duration=\"92000\" />\r\n      <workItem from=\"1752081894943\" duration=\"1830000\" />\r\n      <workItem from=\"1752096038161\" duration=\"2721000\" />\r\n      <workItem from=\"1752171872425\" duration=\"3150000\" />\r\n      <workItem from=\"1752216490713\" duration=\"668000\" />\r\n      <workItem from=\"1752251079790\" duration=\"501000\" />\r\n      <workItem from=\"1752251629482\" duration=\"3138000\" />\r\n      <workItem from=\"1752256420672\" duration=\"416000\" />\r\n      <workItem from=\"1752455880836\" duration=\"8002000\" />\r\n      <workItem from=\"1752533327641\" duration=\"7907000\" />\r\n      <workItem from=\"1752612390226\" duration=\"4635000\" />\r\n      <workItem from=\"1752628572781\" duration=\"13858000\" />\r\n      <workItem from=\"1752651759619\" duration=\"887000\" />\r\n      <workItem from=\"1752676094196\" duration=\"2292000\" />\r\n      <workItem from=\"1752681670032\" duration=\"2122000\" />\r\n      <workItem from=\"1752693218157\" duration=\"659000\" />\r\n      <workItem from=\"1752712311914\" duration=\"7298000\" />\r\n      <workItem from=\"1752727268272\" duration=\"654000\" />\r\n      <workItem from=\"1752769331668\" duration=\"3138000\" />\r\n      <workItem from=\"1752773210118\" duration=\"1885000\" />\r\n      <workItem from=\"1752776374831\" duration=\"3000\" />\r\n      <workItem from=\"1752787856272\" duration=\"198000\" />\r\n      <workItem from=\"1752800201977\" duration=\"16665000\" />\r\n      <workItem from=\"1752822088712\" duration=\"1594000\" />\r\n      <workItem from=\"1752855632889\" duration=\"1754000\" />\r\n      <workItem from=\"1752858759546\" duration=\"802000\" />\r\n      <workItem from=\"1752947515185\" duration=\"38078000\" />\r\n      <workItem from=\"1753043324995\" duration=\"89000\" />\r\n      <workItem from=\"1753043535142\" duration=\"9029000\" />\r\n      <workItem from=\"1753071409635\" duration=\"1990000\" />\r\n      <workItem from=\"1753118203257\" duration=\"5925000\" />\r\n      <workItem from=\"1753146901443\" duration=\"14271000\" />\r\n      <workItem from=\"1753170467955\" duration=\"719000\" />\r\n      <workItem from=\"1753196024334\" duration=\"8038000\" />\r\n      <workItem from=\"1753215377700\" duration=\"3495000\" />\r\n      <workItem from=\"1753229745899\" duration=\"91000\" />\r\n      <workItem from=\"1753231820451\" duration=\"555000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"AVISOSNEW\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1753071660142</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1753071660142</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"UnknownFeatures\">\r\n    <option featureType=\"com.intellij.fileTypeFactory\" implementationName=\".env\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"AVISOSNEW\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"AVISOSNEW\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.sql.SQLSyntaxErrorException\" package=\"java.sql\" />\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-method\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/org/EdwarDa2/Main.java</url>\r\n          <line>5</line>\r\n          <properties class=\"org.EdwarDa2.Main\" method=\"main\">\r\n            <option name=\"EMULATED\" value=\"true\" />\r\n            <option name=\"WATCH_EXIT\" value=\"false\" />\r\n          </properties>\r\n          <option name=\"timeStamp\" value=\"2\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision a00b93a54b3d28fec18b89ef5faee55ed1ec7963)
++++ b/.idea/workspace.xml	(date 1753260178086)
+@@ -4,25 +4,14 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="fd6834a3-c561-46d6-8a22-4a228e1bbaea" name="Changes" comment="AVISOSNEW">
++    <list default="true" id="fd6834a3-c561-46d6-8a22-4a228e1bbaea" name="Changes" comment="Api acutalizada">
+       <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.lock" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/resourceHashesCache.bin" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/model/Mesa.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/model/Mesa.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/repository/MesasRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/repository/MesasRepository.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/repository/ProductoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/EdwarDa2/repository/ProductoRepository.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/build/resources/main/.env" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/.env" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/DTO/comandas/AvisoRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/DTO/comandas/AvisoRequestDTO.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/controller/AvisosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/controller/AvisosController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Aviso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Aviso.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Mesa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/model/Mesa.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/AvisosRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/AvisosRepository.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/MesasRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/MesasRepository.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/resources/.env" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/.env" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -82,10 +71,7 @@
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="GitHubPullRequestSearchHistory">{
+-  &quot;lastFilter&quot;: {
+-    &quot;state&quot;: &quot;OPEN&quot;,
+-    &quot;assignee&quot;: &quot;cesar160&quot;
+-  }
++  &quot;lastFilter&quot;: {}
+ }</component>
+   <component name="GithubPullRequestsUISettings">{
+   &quot;selectedUrlAndAccountId&quot;: {
+@@ -93,6 +79,9 @@
+     &quot;accountId&quot;: &quot;50fae2b5-e5b8-46f6-a72e-f84abe01c132&quot;
+   }
+ }</component>
++  <component name="ProblemsViewState">
++    <option name="selectedTabId" value="CurrentFile" />
++  </component>
+   <component name="ProjectColorInfo">{
+   &quot;associatedIndex&quot;: 3
+ }</component>
+@@ -101,25 +90,25 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "Gradle.Download Sources.executor": "Run",
+-    "Gradle.template_api [:org.EdwarDa2.Main.main()].executor": "Run",
+-    "Gradle.template_api [:org.alilopez.Main.main()].executor": "Run",
+-    "Gradle.template_api [shadowJar].executor": "Run",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "RunOnceActivity.git.unshallow": "true",
+-    "git-widget-placeholder": "main",
+-    "last_opened_file_path": "C:/Users/cesarr/IdeaProjects/template_api",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
++    &quot;Gradle.template_api [:org.EdwarDa2.Main.main()].executor&quot;: &quot;Run&quot;,
++    &quot;Gradle.template_api [:org.alilopez.Main.main()].executor&quot;: &quot;Run&quot;,
++    &quot;Gradle.template_api [shadowJar].executor&quot;: &quot;Run&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/cesarr/IdeaProjects/template_api&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyClassDialog.RECENTS_KEY">
+       <recent name="org.EdwarDa2.DTO.comandas" />
+@@ -255,7 +244,8 @@
+       <workItem from="1753196024334" duration="8038000" />
+       <workItem from="1753215377700" duration="3495000" />
+       <workItem from="1753229745899" duration="91000" />
+-      <workItem from="1753231820451" duration="555000" />
++      <workItem from="1753231820451" duration="7393000" />
++      <workItem from="1753259089113" duration="1081000" />
+     </task>
+     <task id="LOCAL-00001" summary="AVISOSNEW">
+       <option name="closed" value="true" />
+@@ -265,7 +255,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1753071660142</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="Api acutalizada">
++      <option name="closed" value="true" />
++      <created>1753232400177</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1753232400178</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -287,7 +285,8 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="AVISOSNEW" />
+-    <option name="LAST_COMMIT_MESSAGE" value="AVISOSNEW" />
++    <MESSAGE value="Api acutalizada" />
++    <option name="LAST_COMMIT_MESSAGE" value="Api acutalizada" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
