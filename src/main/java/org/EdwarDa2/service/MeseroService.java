@@ -13,9 +13,9 @@ public class MeseroService {
     private final MeseroRepository meseroRepo;
     private final UserRepository userRepo;
 
-    public MeseroService(UserRepository userRepo, MeseroRepository meseroRepo) {
+    public MeseroService(MeseroRepository meseroRepo) {
         this.meseroRepo = meseroRepo;
-        this.userRepo = userRepo;
+        this.userRepo = new UserRepository();
     }
 
     public List<Mesero> getAllMesero() throws SQLException {

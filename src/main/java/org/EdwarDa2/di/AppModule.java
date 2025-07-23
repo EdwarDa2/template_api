@@ -8,12 +8,7 @@ import org.EdwarDa2.service.*;
 import static java.rmi.Naming.bind;
 
 public class AppModule {
-    public static UserRoutes initUser() {
-        UserRepository userRepo = new UserRepository();
-        UserService userService = new UserService(userRepo);
-        UserController userController = new UserController(userService);
-        return new UserRoutes(userController);
-    }
+
 
     public static MesasRoutes initMesas() {
         MesasRepository mesasRepository = new MesasRepository();

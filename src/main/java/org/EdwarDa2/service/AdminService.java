@@ -13,9 +13,9 @@ public class AdminService {
     private final AdminRepository adminRepo;
     private final UserRepository userRepo;
 
-    public AdminService(UserRepository userRepo, AdminRepository adminRepo) {
+    public AdminService(AdminRepository adminRepo) {
         this.adminRepo = adminRepo;
-        this.userRepo = userRepo;
+        this.userRepo = new UserRepository();
     }
 
     public List<Admin> getAllAdmin() throws SQLException {
