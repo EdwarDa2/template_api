@@ -24,6 +24,7 @@ public class DetalleComandaRepository {
                 l.setId_comanda(rs.getInt("id_comanda"));
                 l.setId_producto(rs.getInt("id_producto"));
                 l.setCantidad(rs.getInt("cantidad"));
+                l.setComentario(rs.getString("comentario"));
                 listaProductos.add(l);
             }
         }

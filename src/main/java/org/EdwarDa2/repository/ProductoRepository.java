@@ -1,11 +1,11 @@
 package org.EdwarDa2.repository;
 
 import org.EdwarDa2.config.DatabaseConfig;
+import org.EdwarDa2.model.Categoria;
 import org.EdwarDa2.model.Producto;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import org.EdwarDa2.model.Subcategoria;
+
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -86,7 +86,54 @@ public class ProductoRepository {
             stmt.executeUpdate();
         }
     }
+    public Producto savePro(Producto producto) throws SQLException {
+        String query = "INSERT INTO productos ( id_subcategoria, nombre, precio) VALUES ( ?, ?, ?)";
+
+        try (Connection conn = DatabaseConfig.getDataSource().getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
+
+            stmt.setInt(1, producto.getId_subCategoria());
+            stmt.setString(2, producto.getNombre());
+            stmt.setDouble(3, producto.getPrecio());
+
+
+            stmt.executeUpdate();
+            try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
+                if (generatedKeys.next()) {
+                    producto.setId_producto(generatedKeys.getInt(1));
+                }
+            }
+            return producto;
+        }
+    }
+
+    public List<Producto> AllPro() throws SQLException {
+        List<Producto> productos = new ArrayList<>();
+        String query = "SELECT p.id_producto, p.nombre, p.precio, p.id_subcategoria, s.id_categoria " +
+                "FROM productos p " +
+                "JOIN subcategorias s ON p.id_subcategoria = s.id_subcategoria";
+
+        try (Connection conn = DatabaseConfig.getDataSource().getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query);
+             ResultSet rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+                Producto producto = new Producto();
+                producto.setId_producto(rs.getInt("id_producto"));
+                producto.setNombre(rs.getString("nombre"));
+                producto.setPrecio(rs.getFloat("precio"));
+
+                Subcategoria subcategoria = new Subcategoria();
+                subcategoria.setId_subcategoria(rs.getInt("id_subcategoria"));
+
+                Categoria categoria = new Categoria();
+                categoria.setId_categoria(rs.getInt("id_categoria"));
+                subcategoria.setCategoria(categoria);
+                producto.setSubcategoria(subcategoria);
+
+                productos.add(producto);
+            }
+        }
+        return productos;
+    }
 }
-
-
-

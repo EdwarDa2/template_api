@@ -16,5 +16,7 @@ public class ProductoRoutes {
         app.get("/productos/subcategoria/{id_subcategoria}", productoController::getBySubcategoria);
         app.put("/productos/{id}", productoController::update);
         app.delete("/productos/{id}", productoController::delete);
+        app.post("/productos/item", productoController::createPro);
+        app.get("/productos/item", productoController::getAllPro);
     }
 }

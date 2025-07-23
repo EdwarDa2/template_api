@@ -4,6 +4,15 @@ public class Subcategoria {
     private int id_subcategoria;
     private String nombre_subcategoria;
     private int id_categoria;
+    private Categoria categoria;
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
 
     public Subcategoria() {
     }

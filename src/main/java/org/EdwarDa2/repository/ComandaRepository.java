@@ -97,7 +97,7 @@ public class ComandaRepository {
         }
     public void save( ComandaRequestDTO comanda) throws SQLException {
         String insertComanda = "INSERT INTO comandas (id_mesa, id_mesero, fecha_hora) VALUES (?, ?, ?)";
-        String insertDetalle = "INSERT INTO detallecomanda (id_comanda, id_producto, cantidad) VALUES (?, ?, ?)";
+        String insertDetalle = "INSERT INTO detallecomanda (id_comanda, id_producto, cantidad,comentario) VALUES (?, ?, ?, ?)";
 
         try (Connection conn = DatabaseConfig.getDataSource().getConnection()) {
             conn.setAutoCommit(false);
@@ -123,6 +123,7 @@ public class ComandaRepository {
                     detalleStmt.setInt(1, idGenerado);
                     detalleStmt.setInt(2, producto.getId_producto());
                     detalleStmt.setInt(3, producto.getCantidad());
+                    detalleStmt.setString(4, producto.getComentario());
                     detalleStmt.addBatch();
                 }
                 detalleStmt.executeBatch();

@@ -5,7 +5,11 @@ public class Producto {
     private int id_subCategoria;
     private String nombre;
     private float precio ;
+    private Subcategoria subcategoria;
 
+    public Subcategoria getSubcategoria() {return subcategoria;}
+
+    public void setSubcategoria(Subcategoria subcategoria) {this.subcategoria = subcategoria;}
 
     public int getId_subCategoria() {
         return id_subCategoria;

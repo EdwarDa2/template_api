@@ -2,6 +2,8 @@ package org.EdwarDa2.controller;
 
 import io.javalin.http.Context;
 import io.javalin.http.HttpStatus;
+import org.EdwarDa2.DTO.ProductoDTO;
+import org.EdwarDa2.DTO.ProductoRequestDTO.ProductoRequestDTO;
 import org.EdwarDa2.model.Producto;
 import org.EdwarDa2.service.ProductoService;
 
@@ -9,6 +11,7 @@ import org.EdwarDa2.service.ProductoService;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ProductoController {
     private final ProductoService productoService;
@@ -80,5 +83,26 @@ public class ProductoController {
             e.printStackTrace();
             ctx.status(500).result("Error al eliminar producto: " + e.getMessage());
         }
+    }
+    public void createPro(Context ctx) throws SQLException {
+        ProductoRequestDTO productoDTO = ctx.bodyAsClass(ProductoRequestDTO.class);
+        Producto producto = productoService.createPro(productoDTO);
+        ctx.status(201).json(producto);
+    }
+
+
+    public void getAllPro(Context ctx) throws SQLException {
+        List<Producto> productos = productoService.getAllPro();
+
+        List<ProductoDTO> productoDTOs = productos.stream().map(producto -> {
+            ProductoDTO dto = new ProductoDTO();
+            dto.setNombre(producto.getNombre());
+            dto.setPrecio(producto.getPrecio());
+            dto.setCategoria(producto.getSubcategoria().getCategoria().getNombre_categoria());
+            dto.setSubcategoria(producto.getSubcategoria().getNombre_subcategoria());
+            return dto;
+        }).collect(Collectors.toList());
+
+        ctx.json(productoDTOs);
     }
 }

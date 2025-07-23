@@ -11,12 +11,10 @@ public class UserRoutes {
     }
 
     public void register(Javalin app) {
-        app.get("/usuario", userController::getAll);
-        app.post("/usuario", userController::create);
-        app.get("/usuario/{id_usuario}", userController::getById);
-        app.put("/usuario/{id}", userController::update);
-        app.delete("/usuario/{id}", userController::delete);
-        app.get("/mesero/{id_mesero}", userController::getMeseroWithUser);
-        app.post("/mesero", userController::createMesero);
+        app.get("/usuarios", userController::getAll);
+        app.post("/usuarios", userController::create);
+        app.get("/usuarios/{id_usuario}", userController::getById);
+        app.put("/usuarios/{id}", userController::update);
+        app.delete("/usuarios/{id}", userController::delete);
     }
 }
