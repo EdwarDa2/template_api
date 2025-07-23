@@ -2,6 +2,7 @@ package org.EdwarDa2.controller;
 
 import io.javalin.http.Context;
 import io.javalin.http.HttpStatus;
+import org.EdwarDa2.DTO.AdminDTO;
 import org.EdwarDa2.model.Admin;
 import org.EdwarDa2.service.AdminService;
 
@@ -11,7 +12,7 @@ import java.util.List;
 public class AdminController {
     private final AdminService adminService;
 
-    public AdminController(AdminService adminService   ) {
+    public AdminController(AdminService adminService) {
         this.adminService = adminService;
     }
 
@@ -26,7 +27,7 @@ public class AdminController {
 
     public void getById(Context ctx) {
         try {
-            int id = Integer.parseInt(ctx.pathParam("id"));
+            int id = Integer.parseInt(ctx.pathParam("id_admin"));
             Admin admin = adminService.getById_admin(id);
             if (admin != null) {
                 ctx.json(admin);
@@ -34,15 +35,15 @@ public class AdminController {
                 ctx.status(HttpStatus.NOT_FOUND).result("Admin no encontrado");
             }
         } catch (Exception e) {
-            ctx.status(404).result("Error al obtener Admin: " + e.getMessage());
+            ctx.status(404).result("Error al obtener admins: " + e.getMessage());
         }
     }
 
     public void create(Context ctx) {
         try {
-            Admin admin = ctx.bodyAsClass(Admin.class);
-            adminService.createAdmin(admin);
-            ctx.status(201).result("Admin creada");
+            AdminDTO dto = ctx.bodyAsClass(AdminDTO.class);
+            adminService.createAdmin(dto);
+            ctx.status(201).result("Admin creado");
         } catch (Exception e) {
             e.printStackTrace();
             ctx.status(400).result("Error al crear admin: " + e.getMessage());
@@ -57,7 +58,7 @@ public class AdminController {
                 return;
             }
             adminService.updateAdmin(admin);
-            ctx.status(200).result("admin actualizado exitosamente");
+            ctx.status(200).result("Admin actualizado exitosamente");
         } catch (NumberFormatException e) {
             ctx.status(400).result("ID de admin inválido.");
         } catch (Exception e) {

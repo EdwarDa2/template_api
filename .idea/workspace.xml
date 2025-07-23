@@ -24,6 +24,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/AvisosRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/AvisosRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/MesasRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/EdwarDa2/repository/MesasRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/.env" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/.env" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,12 +88,12 @@
     &quot;assignee&quot;: &quot;cesar160&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/EdwarDa2/template_api.git&quot;,
-    &quot;accountId&quot;: &quot;50fae2b5-e5b8-46f6-a72e-f84abe01c132&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/EdwarDa2/template_api.git",
+    "accountId": "7df0fcea-679c-4b77-a0a1-384decead587"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -256,6 +257,7 @@
       <workItem from="1753215377700" duration="3495000" />
       <workItem from="1753229745899" duration="91000" />
       <workItem from="1753231820451" duration="555000" />
+
     </task>
     <task id="LOCAL-00001" summary="AVISOSNEW">
       <option name="closed" value="true" />

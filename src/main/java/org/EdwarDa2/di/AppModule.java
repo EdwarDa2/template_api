@@ -1,18 +1,18 @@
 package org.EdwarDa2.di;
-import io.javalin.Javalin;
 import org.EdwarDa2.controller.*;
 import org.EdwarDa2.repository.*;
 import org.EdwarDa2.routes.*;
 import org.EdwarDa2.service.*;
 
-import static java.rmi.Naming.bind;
-
 public class AppModule {
-    public static UserRoutes initUser() {
-        UserRepository userRepo = new UserRepository();
-        UserService userService = new UserService(userRepo);
-        UserController userController = new UserController(userService);
-        return new UserRoutes(userController);
+
+
+    public static ProductoRoutes initProductos() {
+        ProductoRepository productoRepository = new ProductoRepository();
+        ProductoService productoService = new ProductoService(productoRepository);
+        ProductoController productoController = new ProductoController(productoService);
+        ProductoRoutes productosRoutes = new ProductoRoutes(productoController);
+        return productosRoutes;
     }
 
     public static MesasRoutes initMesas() {
@@ -42,7 +42,8 @@ public class AppModule {
 
     public static MeseroRoutes initMeseros() {
         MeseroRepository meseroRepository = new MeseroRepository();
-        MeseroService meseroService = new MeseroService(meseroRepository);
+        UserRepository userRepository = new UserRepository();
+        MeseroService meseroService = new MeseroService(userRepository,meseroRepository);
         MeseroController meseroController = new MeseroController(meseroService);
         MeseroRoutes meseroRoutes = new MeseroRoutes(meseroController);
         return meseroRoutes;
@@ -67,8 +68,9 @@ public class AppModule {
     }
 
     public static AdminRoutes initAdmins() {
+        UserRepository userRepository = new UserRepository();
         AdminRepository adminRepository = new AdminRepository();
-        AdminService adminService = new AdminService(adminRepository);
+        AdminService adminService = new AdminService(userRepository, adminRepository);
         AdminController adminController = new AdminController(adminService);
         AdminRoutes adminRoutes = new AdminRoutes(adminController);
         return adminRoutes;
@@ -90,12 +92,11 @@ public class AppModule {
         return statsRoutes;
     }
 
-        public static ProductoRoutes initProductos() {
-            ProductoRepository productoRepository = new ProductoRepository();
-            ProductoService productoService = new ProductoService(productoRepository);
-            ProductoController productoController = new ProductoController(productoService);
-            ProductoRoutes productoRoutes = new ProductoRoutes(productoController);
-            return productoRoutes;
-        }
-    }
-
+    //public static SubcategoriaRoutes initSubcategorias() {
+        //SubcategoriaRepository subcategoriaRepository = new SubcategoriaRepository();
+        //SubcategoriaService subcategoriaService = new SubcategoriaService(subcategoriaRepository);
+        //SubcategoriaController subcategoriaController = new SubcategoriaController(subcategoriaService);
+        //SubcategoriaRoutes subcategoriaRoutes = new SubcategoriaRoutes(subcategoriaController);
+        //return subcategoriaRoutes;
+    //}
+}
