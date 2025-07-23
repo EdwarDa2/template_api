@@ -22,7 +22,8 @@ public class AvisosController {
     }
 
     public void getById(Context ctx) throws SQLException {
-        int id = Integer.parseInt(ctx.pathParam("id"));
+        // La ruta usa {id_aviso}, por lo que hay que obtener ese parámetro
+        int id = Integer.parseInt(ctx.pathParam("id_aviso"));
         Aviso aviso = service.getById_aviso(id);
         if (aviso != null) {
             ctx.json(aviso);
@@ -32,15 +33,36 @@ public class AvisosController {
     }
 
     public void create(Context ctx) throws SQLException {
-        AvisoRequestDTO dto = ctx.bodyAsClass(AvisoRequestDTO.class);
+        // El cliente puede enviar "id_admin" o "id_usuario"; soportamos ambos
+        Aviso incoming = ctx.bodyAsClass(Aviso.class);
         Aviso aviso = new Aviso();
-        aviso.setId_admin(dto.id_admin);
-        aviso.setContenido(dto.contenido);
-        aviso.setFecha(LocalDateTime.now());
-
+        int idAdmin = incoming.getId_admin();
+        // Si no se envió id_admin, intentamos leer id_usuario desde el cuerpo
+        if (idAdmin == 0) {
+            try {
+                java.util.Map<?,?> map = ctx.bodyAsClass(java.util.Map.class);
+                Object idUsuarioObj = map.get("id_usuario");
+                if (idUsuarioObj instanceof Number) {
+                    idAdmin = ((Number) idUsuarioObj).intValue();
+                }
+            } catch (Exception ignored) {
+                // Si falla, dejamos idAdmin en cero y la base de datos lo rechazará
+            }
+        }
+        aviso.setId_admin(idAdmin);
+        aviso.setContenido(incoming.getContenido());
+        // Si se envía fecha, la usamos; de lo contrario, usamos la fecha/hora actual
+        if (incoming.getFecha() != null) {
+            aviso.setFecha(incoming.getFecha());
+        } else {
+            aviso.setFecha(LocalDateTime.now());
+        }
         int idGenerado = service.createAviso(aviso);
         if (idGenerado != -1) {
-            ctx.status(201).result(String.valueOf(idGenerado));
+            // Devolvemos un JSON con el id generado
+            java.util.Map<String, Object> response = new java.util.HashMap<>();
+            response.put("id_aviso", idGenerado);
+            ctx.status(201).json(response);
         } else {
             ctx.status(500).result("Error al crear aviso");
         }

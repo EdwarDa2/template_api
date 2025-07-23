@@ -4,5 +4,7 @@ public class AvisoRequestDTO {
     public int id_admin;
     public String contenido;
 
+
+
     public AvisoRequestDTO() {}
 }

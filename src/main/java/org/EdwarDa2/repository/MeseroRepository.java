@@ -35,15 +35,14 @@ public class MeseroRepository {
 
         try (Connection conn = DatabaseConfig.getDataSource().getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
-
             stmt.setInt(1, id_mesero);
-
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
                     mesero = new Mesero();
                     mesero.setId_mesero(rs.getInt("id_mesero"));
                     mesero.setId_usuario(rs.getInt("id_usuario"));
-                    mesero.setClave(rs.getString("Clave"));
+                    // Usar siempre el nombre de columna en minúsculas para evitar confusiones
+                    mesero.setClave(rs.getString("clave"));
                 }
             }
         }
@@ -60,12 +59,13 @@ public class MeseroRepository {
         }
     }
     public void update(Mesero mesero) throws SQLException {
-        String query = "UPDATE meseros  SET id_usuario = ?, clave = ? WHERE id_mesero = ?";
+        String query = "UPDATE meseros SET id_usuario = ?, clave = ? WHERE id_mesero = ?";
         try (Connection conn = DatabaseConfig.getDataSource().getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.setInt(1, mesero.getId_usuario());
             stmt.setString(2, mesero.getClave());
-            stmt.setInt(3, mesero.getId_usuario());
+            // El WHERE debe usar el id_mesero, no el id_usuario
+            stmt.setInt(3, mesero.getId_mesero());
             stmt.executeUpdate();
         }
     }

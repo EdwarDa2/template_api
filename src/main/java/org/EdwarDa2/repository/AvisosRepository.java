@@ -34,25 +34,23 @@ public class AvisosRepository {
 
     public Aviso findById_aviso(int id_aviso) throws SQLException {
         Aviso aviso = null;
-        String query = "SELECT * FROM avisos WHERE id_admin = ?";
+        // Consulta ahora por id_aviso (antes se usaba id_admin incorrectamente)
+        String query = "SELECT * FROM avisos WHERE id_aviso = ?";
 
-        try (
-                Connection conn = DatabaseConfig.getDataSource().getConnection();
-                PreparedStatement stmt = conn.prepareStatement(query)
-        ) {
+        try (Connection conn = DatabaseConfig.getDataSource().getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.setInt(1, id_aviso);
 
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
                     aviso = new Aviso();
                     aviso.setId_aviso(rs.getInt("id_aviso"));
-                    aviso.setId_admin(rs.getInt("id_usuario"));
-                    aviso.setFecha(rs.getTimestamp("fecha").toLocalDateTime()); // CAMBIO
+                    aviso.setId_admin(rs.getInt("id_admin"));
+                    aviso.setFecha(rs.getTimestamp("fecha").toLocalDateTime());
                     aviso.setContenido(rs.getString("contenido"));
                 }
             }
         }
-
         return aviso;
     }
 

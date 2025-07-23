@@ -52,15 +52,15 @@ public class CategoriaRepository {
         return subcategorias;
     }
 
-        public void save(Categoria categoria) throws SQLException {
-            String query = "INSERT INTO categorias (nombre_categoria) VALUES (?,?)";
-            try (Connection conn = DatabaseConfig.getDataSource().getConnection();
-                 PreparedStatement stmt = conn.prepareStatement(query)) {
-                stmt.setString(1, categoria.getNombre_categoria());
-                stmt.executeUpdate();
-
-            }
+    public void save(Categoria categoria) throws SQLException {
+        // Solo se necesita un placeholder para nombre_categoria
+        String query = "INSERT INTO categorias (nombre_categoria) VALUES (?)";
+        try (Connection conn = DatabaseConfig.getDataSource().getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setString(1, categoria.getNombre_categoria());
+            stmt.executeUpdate();
         }
+    }
         public void update(Categoria categoria) throws SQLException {
             String query = "UPDATE categorias  SET  nombre_categoria = ? WHERE id_categoria  = ?";
             try (Connection conn = DatabaseConfig.getDataSource().getConnection();

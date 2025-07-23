@@ -17,7 +17,7 @@ public class ComandaRepository {
 
         String comandaQuery ="SELECT * FROM comandas";
         String detalleQuery ="SELECT d.id_comanda, d.id_producto, d.cantidad, d.id_detallecomanda,d.comentario,p.nombre \n" +
-                "\t FROM detallecomanda d \n" +
+                "\t FROM detallecomandas d \n" +
                 "\t JOIN productos p  ON d.id_producto = p.id_producto;";
 
         Map<Integer, ArrayList<DetalleComandaDTO>> productosPorComanda = new HashMap<>();
@@ -97,7 +97,7 @@ public class ComandaRepository {
         }
     public void save( ComandaRequestDTO comanda) throws SQLException {
         String insertComanda = "INSERT INTO comandas (id_mesa, id_mesero, fecha_hora) VALUES (?, ?, ?)";
-        String insertDetalle = "INSERT INTO detallecomanda (id_comanda, id_producto, cantidad,comentario) VALUES (?, ?, ?, ?)";
+        String insertDetalle = "INSERT INTO detallecomandas (id_comanda, id_producto, cantidad,comentario) VALUES (?, ?, ?, ?)";
 
         try (Connection conn = DatabaseConfig.getDataSource().getConnection()) {
             conn.setAutoCommit(false);
