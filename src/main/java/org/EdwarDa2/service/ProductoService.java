@@ -1,9 +1,9 @@
 package org.EdwarDa2.service;
+
 import org.EdwarDa2.DTO.ProductoRequestDTO.ProductoRequestDTO;
 import org.EdwarDa2.model.Producto;
 import org.EdwarDa2.model.Subcategoria;
 import org.EdwarDa2.repository.ProductoRepository;
-
 
 import java.sql.SQLException;
 import java.util.List;
@@ -44,7 +44,8 @@ public class ProductoService {
         return productoRepo.savePro(producto);
     }
     public List<Producto> getAllPro() throws SQLException {
-        return productoRepo.findAll();
+        // Utilizar el método AllPro del repositorio para obtener productos con información de categoría
+        return productoRepo.AllPro();
     }
 
 }

@@ -11,7 +11,6 @@ import org.EdwarDa2.service.CategoriaService;
 import org.EdwarDa2.service.ProductoService;
 import org.EdwarDa2.service.SubcategoriaService;
 
-
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;

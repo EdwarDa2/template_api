@@ -12,6 +12,7 @@ import java.util.List;
 public class ProductoRepository {
     public List<Producto> findAll() throws SQLException {
         List<Producto> productos = new ArrayList<>();
+        // Recuperamos todos los productos. Asegúrese de que los nombres de columna coincidan con los de la base de datos.
         String query = "SELECT * FROM productos";
         try (
                 Connection conn = DatabaseConfig.getDataSource().getConnection();
@@ -22,7 +23,14 @@ public class ProductoRepository {
                 p.setId_producto(rs.getInt("id_producto"));
                 p.setNombre(rs.getString("nombre"));
                 p.setPrecio(rs.getFloat("precio"));
-                p.setSubcategoriaId(rs.getInt("subcategoriaid"));
+                // Usar el nombre correcto de la columna para ID de subcategoría
+                // Dependiendo de la base de datos, puede ser "id_subcategoria". Ajustar según el esquema real.
+                try {
+                    p.setSubcategoriaId(rs.getInt("id_subcategoria"));
+                } catch (SQLException e) {
+                    // En caso de que la columna se llame "subcategoriaid" (sin guion bajo)
+                    p.setSubcategoriaId(rs.getInt("subcategoriaid"));
+                }
                 productos.add(p);
             }
         }
@@ -55,18 +63,19 @@ public class ProductoRepository {
 
 
     public void save(Producto producto) throws SQLException {
-        String query = "INSERT INTO productos (nombre,precio,id_SubCategoria) VALUES (?,?,?)";
+        // Inserta un nuevo producto. Utiliza el nombre correcto de la columna para el ID de subcategoría.
+        String query = "INSERT INTO productos (nombre, precio, id_subcategoria) VALUES (?,?,?)";
         try (Connection conn = DatabaseConfig.getDataSource().getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.setString(1, producto.getNombre());
             stmt.setFloat(2, producto.getPrecio());
             stmt.setInt(3, producto.getSubcategoriaId());
             stmt.executeUpdate();
-
         }
     }
     public void update(Producto producto) throws SQLException {
-        String query = "UPDATE productos  SET nombre = ?,precio = ?,id_subCategoria = ? WHERE id_producto = ?";
+        // Actualizar un producto. Asegúrate de usar el nombre correcto para la columna de subcategoría.
+        String query = "UPDATE productos SET nombre = ?, precio = ?, id_subcategoria = ? WHERE id_producto = ?";
         try (Connection conn = DatabaseConfig.getDataSource().getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.setString(1, producto.getNombre());
