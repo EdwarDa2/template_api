@@ -52,10 +52,11 @@ public class AdminRepository {
     }
 
     public void save(Admin admin) throws SQLException {
-        String query = "INSERT INTO admins (id_usuario) VALUES (?)";
+        String query = "INSERT INTO admins (id_usuario,clave) VALUES (?,?)";
         try (Connection conn = DatabaseConfig.getDataSource().getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.setInt(1, admin.getId_usuario());
+            stmt.setString(2,admin.getClave());
             stmt.executeUpdate();
 
         }
