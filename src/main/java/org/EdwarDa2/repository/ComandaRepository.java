@@ -95,7 +95,7 @@ public class ComandaRepository {
 
             return comanda;
         }
-    public void save( ComandaRequestDTO comanda) throws SQLException {
+    public void save(ComandaRequestDTO comanda) throws SQLException {
         String insertComanda = "INSERT INTO comandas (id_mesa, id_mesero, fecha_hora) VALUES (?, ?, ?)";
         String insertDetalle = "INSERT INTO detallecomandas (id_comanda, id_producto, cantidad,comentario) VALUES (?, ?, ?, ?)";
 
@@ -129,13 +129,14 @@ public class ComandaRepository {
                 detalleStmt.executeBatch();
             }
             conn.commit();
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             throw e;
         }
     }
 
-        public void delete(int id_comanda) throws SQLException {
+
+    public void delete(int id_comanda) throws SQLException {
             String query = "DELETE FROM comandas WHERE id_comanda = ?";
             try (Connection conn = DatabaseConfig.getDataSource().getConnection();
                  PreparedStatement stmt = conn.prepareStatement(query)) {

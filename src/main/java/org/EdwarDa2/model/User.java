@@ -1,5 +1,5 @@
 package org.EdwarDa2.model;
-public class User {
+public class    User {
     private int id_usuario;
     private String nombre;
     private String apellido_p;
