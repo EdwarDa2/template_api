@@ -1,4 +1,5 @@
 package org.EdwarDa2.di;
+
 import io.javalin.Javalin;
 import org.EdwarDa2.controller.*;
 import org.EdwarDa2.repository.*;
@@ -85,14 +86,23 @@ public class AppModule {
         return statsRoutes;
     }
 
-        public static ProductoRoutes initProductos() {
-            ProductoRepository productoRepository = new ProductoRepository();
-            ProductoService productoService = new ProductoService(productoRepository);
-            CategoriaService categoriaService = new CategoriaService(new CategoriaRepository());
-            SubcategoriaService subcategoriaService = new SubcategoriaService(new SubcategoriaRepository());
-            ProductoController productoController = new ProductoController(productoService, categoriaService, subcategoriaService);
-            ProductoRoutes productoRoutes = new ProductoRoutes(productoController);
-            return productoRoutes;
+    public static ProductoRoutes initProductos() {
+        ProductoRepository productoRepository = new ProductoRepository();
+        ProductoService productoService = new ProductoService(productoRepository);
+        CategoriaService categoriaService = new CategoriaService(new CategoriaRepository());
+        SubcategoriaService subcategoriaService = new SubcategoriaService(new SubcategoriaRepository());
+        ProductoController productoController = new ProductoController(productoService, categoriaService, subcategoriaService);
+        ProductoRoutes productoRoutes = new ProductoRoutes(productoController);
+        return productoRoutes;
+    }
+
+    public static LoginRoutes initLogin() {
+        AdminRepository adminRepository = new AdminRepository();
+        MeseroRepository meseroRepository = new MeseroRepository();
+        LoginService loginService = new LoginService(adminRepository, meseroRepository);
+        LoginController loginController = new LoginController(loginService);
+        LoginRoutes loginRoutes = new LoginRoutes(loginController);
+        return loginRoutes;
     }
 }
 

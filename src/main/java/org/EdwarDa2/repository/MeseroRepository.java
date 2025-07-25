@@ -2,6 +2,7 @@ package org.EdwarDa2.repository;
 
 import org.EdwarDa2.config.DatabaseConfig;
 import org.EdwarDa2.model.Mesero;
+import org.EdwarDa2.model.Usuario;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -48,6 +49,7 @@ public class MeseroRepository {
         }
         return mesero;
     }
+
     public void save(Mesero mesero) throws SQLException {
 
         String query = "INSERT INTO meseros (id_usuario, clave) VALUES (?,?)";
@@ -58,6 +60,7 @@ public class MeseroRepository {
             stmt.executeUpdate();
         }
     }
+
     public void update(Mesero mesero) throws SQLException {
         String query = "UPDATE meseros SET id_usuario = ?, clave = ? WHERE id_mesero = ?";
         try (Connection conn = DatabaseConfig.getDataSource().getConnection();
@@ -69,6 +72,7 @@ public class MeseroRepository {
             stmt.executeUpdate();
         }
     }
+
     public void delete(int id_mesero) throws SQLException {
         String query = "DELETE FROM meseros WHERE id_mesero = ?";
 
@@ -77,5 +81,35 @@ public class MeseroRepository {
             stmt.setInt(1, id_mesero);
             stmt.executeUpdate();
         }
+    }
+
+    public Usuario validarMesero(String clave) {
+        String query = "SELECT u.id_usuario, u.nombre, u.apellido_p, u.apellido_m, m.clave, 'Mesero' AS tipoRol " +
+                "FROM meseros m " +
+                "JOIN usuarios u ON m.id_usuario = u.id_usuario " +
+                "WHERE m.clave = ?";
+
+        try (Connection conn = DatabaseConfig.getDataSource().getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setString(1, clave);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                return new Usuario(
+                        rs.getInt("id_usuario"),
+                        rs.getString("nombre"),
+                        rs.getString("apellido_p"),
+                        rs.getString("apellido_m"),
+                        rs.getString("tipoRol"),
+                        rs.getString("clave")
+                );
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 }
